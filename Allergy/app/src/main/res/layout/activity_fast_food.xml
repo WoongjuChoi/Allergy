@@ -13,12 +13,14 @@
         >
 
         <ImageView
+            android:id="@+id/titleImage"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:src="@drawable/burger"
             android:layout_margin="15dp"/>
 
         <TextView
+            android:id="@+id/titleText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="20dp"

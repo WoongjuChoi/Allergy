@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Allergy">
-        <activity android:name=".PizzaActivity"></activity>
         <activity android:name=".FastFoodActivity" />
         <activity android:name=".McMenuActivity" />
         <activity android:name=".MainActivity">

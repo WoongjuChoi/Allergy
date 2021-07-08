@@ -43,10 +43,4 @@
         android:layout_height="350dp"
         android:numColumns="4"></GridView>
 
-    <Button
-        android:id="@+id/mcdonald"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="맥도날드메뉴" />
-
 </LinearLayout>

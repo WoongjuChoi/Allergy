@@ -3,10 +3,13 @@ package com.example.allergy;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.view.menu.MenuAdapter;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.GridView;
@@ -16,6 +19,7 @@ import android.widget.ListView;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
+    ArrayList<MainMenuItem> items = new ArrayList<MainMenuItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,30 +28,47 @@ public class MainActivity extends AppCompatActivity {
 
         GridView gridView = (GridView) findViewById(R.id.gridView);
 
-        MainAdapter adapter = new MainAdapter();
+        MainAdapter adapter = new MainAdapter(
+                getApplicationContext(),
+                R.layout.mainmenu_view,
+                items
+        );
 
-        adapter.addItem(new MainMenuItem("패스트푸드", R.drawable.burger));
-        adapter.addItem(new MainMenuItem("피자", R.drawable.pizza));
-        adapter.addItem(new MainMenuItem("치킨", R.drawable.chicken));
-        adapter.addItem(new MainMenuItem("디저트", R.drawable.dessert));
-        adapter.addItem(new MainMenuItem("분식", R.drawable.tteokbokki));
-        adapter.addItem(new MainMenuItem("도시락", R.drawable.lunchbox));
-        adapter.addItem(new MainMenuItem("중국집", R.drawable.jajangmyeon));
+        items.add(new MainMenuItem("패스트푸드", R.drawable.burger));
+        items.add(new MainMenuItem("피자", R.drawable.pizza));
+        items.add(new MainMenuItem("치킨", R.drawable.chicken));
+        items.add(new MainMenuItem("디저트", R.drawable.dessert));
+        items.add(new MainMenuItem("분식", R.drawable.tteokbokki));
+        items.add(new MainMenuItem("도시락", R.drawable.lunchbox));
+        items.add(new MainMenuItem("중국집", R.drawable.jajangmyeon));
 
         gridView.setAdapter(adapter);
 
-        Button mcbutton = (Button) findViewById(R.id.mcdonald);
-        mcbutton.setOnClickListener(new View.OnClickListener() {
+        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), McMenuActivity.class);
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Intent intent = new Intent(
+                        getApplicationContext(), // 현재화면의 제어권자
+                        FastFoodActivity.class); // 다음넘어갈 화면
+
+                intent.putExtra("name", items.get(position).menuName);
+                intent.putExtra("Image", items.get(position).resId2);
+
                 startActivityForResult(intent, 101);
             }
         });
     }
 
-    class MainAdapter extends BaseAdapter {
-        ArrayList<MainMenuItem> items = new ArrayList<MainMenuItem>();
+    public class MainAdapter extends BaseAdapter {
+        Context context;
+        int layout;
+        ArrayList<MainMenuItem> items;
+
+        public MainAdapter(Context context, int layout, ArrayList<MainMenuItem> items) {
+            this.context = context;
+            this.layout = layout;
+            this.items = items;
+        }
 
         @Override
         public boolean areAllItemsEnabled() {
@@ -61,12 +82,12 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         public Object getItem(int position) {
-            return null;
+            return position;
         }
 
         @Override
         public long getItemId(int position) {
-            return 0;
+            return position;
         }
 
         public void addItem(MainMenuItem item) {
@@ -85,15 +106,6 @@ public class MainActivity extends AppCompatActivity {
             MainMenuItem item = items.get(position);
             view.setmName(item.getMenuName());
             view.setmImage(item.getResId2());
-
-            LinearLayout cmdArea = (LinearLayout) convertView.findViewById(R.id.cmdArea);
-            cmdArea.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(v.getContext(), McMenuActivity.class);
-                    startActivityForResult(intent, 101);
-                }
-            });
 
             return view;
         }
