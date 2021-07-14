@@ -17,7 +17,7 @@ public class MainMenuItem {
         this.menuName = menuName;
     }
 
-    public int getResId2() {
+    public int getResId() {
         return resId2;
     }
 

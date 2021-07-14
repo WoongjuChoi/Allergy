@@ -25,7 +25,7 @@ public class MainMenuView extends LinearLayout {
 
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.mainmenu_view, this, true);
+        inflater.inflate(R.layout.mainmenu_item_view, this, true);
 
         mName = (TextView) findViewById(R.id.MenuName);
         mImage = (ImageView) findViewById(R.id.menuImage);

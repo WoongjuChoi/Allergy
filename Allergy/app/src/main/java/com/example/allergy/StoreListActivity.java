@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -16,13 +15,13 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class FastFoodActivity extends AppCompatActivity {
+public class StoreListActivity extends AppCompatActivity {
     ArrayList<MainMenuItem> items = new ArrayList<MainMenuItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_fast_food);
+        setContentView(R.layout.store_list_view);
 
         TextView title = (TextView) findViewById(R.id.titleText); //타이틀 이름
         ImageView titleImage = (ImageView) findViewById(R.id.titleImage); //타이틀 이미지
@@ -35,7 +34,7 @@ public class FastFoodActivity extends AppCompatActivity {
 
         FastMenuAdapter fastMenuAdapter = new FastMenuAdapter(
                 getApplicationContext(),
-                R.layout.mainmenu_view,
+                R.layout.mainmenu_item_view,
                 items
         );
 
@@ -62,7 +61,7 @@ public class FastFoodActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재화면의 제어권자
-                        McMenuActivity.class); // 다음넘어갈 화면
+                        MenuListActivity.class); // 다음넘어갈 화면
 
                 intent.putExtra("StoreName", items.get(position).menuName);
                 intent.putExtra("StoreImage", items.get(position).resId2);
@@ -110,16 +109,16 @@ public class FastFoodActivity extends AppCompatActivity {
 
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
-            McMenuItemView view = null;
+            MenuItemView view = null;
             if (convertView == null) {
-                view = new McMenuItemView(getApplicationContext());
+                view = new MenuItemView(getApplicationContext());
             } else {
-                view = (McMenuItemView) convertView;
+                view = (MenuItemView) convertView;
             }
 
             MainMenuItem item = items.get(position);
             view.setName(item.getMenuName());
-            view.setIcon(item.getResId2());
+            view.setIcon(item.getResId());
 
             return view;
         }

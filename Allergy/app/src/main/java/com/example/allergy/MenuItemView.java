@@ -9,17 +9,17 @@ import android.widget.TextView;
 
 import androidx.annotation.Nullable;
 
-public class McMenuItemView extends LinearLayout {
+public class MenuItemView extends LinearLayout {
     TextView textView;
     ImageView imageView;
 
-    public McMenuItemView(Context context) {
+    public MenuItemView(Context context) {
         super(context);
 
         init(context);
     }
 
-    public McMenuItemView(Context context, @Nullable AttributeSet attrs) {
+    public MenuItemView(Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
 
         init(context);
@@ -27,7 +27,7 @@ public class McMenuItemView extends LinearLayout {
 
     private void init(Context context) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        inflater.inflate(R.layout.mc_menuitem_view, this, true);
+        inflater.inflate(R.layout.menu_item_view, this, true);
 
         textView = (TextView) findViewById(R.id.name);
         imageView = (ImageView) findViewById(R.id.image);

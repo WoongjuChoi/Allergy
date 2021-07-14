@@ -25,33 +25,15 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_margin="20dp"
-          android:text="맥도날드"
+          android:text="(가게이름)"
           android:textSize="50dp"
           android:textStyle="bold" />
 
     </LinearLayout>
 
-  <ScrollView
-      android:layout_width="match_parent"
-      android:layout_height="match_parent"
-      android:id="@+id/scrollView">
-      <androidx.constraintlayout.widget.ConstraintLayout
-          android:layout_width="match_parent"
-          android:layout_height="wrap_content"
-          xmlns:app="http://schemas.android.com/apk/res-auto">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
 
-          <ListView
-              android:id="@+id/listView"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              app:layout_constraintBottom_toBottomOf="parent"
-              app:layout_constraintEnd_toEndOf="parent"
-              app:layout_constraintStart_toStartOf="parent">
-
-
-          </ListView>
-      </androidx.constraintlayout.widget.ConstraintLayout>
-
-  </ScrollView>
-
-  </LinearLayout>
+</LinearLayout>

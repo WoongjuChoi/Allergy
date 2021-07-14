@@ -1,20 +1,15 @@
 package com.example.allergy;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.view.menu.MenuAdapter;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.GridView;
-import android.widget.LinearLayout;
-import android.widget.ListView;
 
 import java.util.ArrayList;
 
@@ -30,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
         MainAdapter adapter = new MainAdapter(
                 getApplicationContext(),
-                R.layout.mainmenu_view,
+                R.layout.mainmenu_item_view,
                 items
         );
 
@@ -49,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재화면의 제어권자
-                        FastFoodActivity.class); // 다음넘어갈 화면
+                        StoreListActivity.class); // 다음넘어갈 화면
 
                 intent.putExtra("name", items.get(position).menuName);
                 intent.putExtra("Image", items.get(position).resId2);
@@ -105,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
             MainMenuItem item = items.get(position);
             view.setmName(item.getMenuName());
-            view.setmImage(item.getResId2());
+            view.setmImage(item.getResId());
 
             return view;
         }
