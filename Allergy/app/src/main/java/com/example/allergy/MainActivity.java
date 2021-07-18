@@ -1,7 +1,5 @@
 package com.example.allergy;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.BaseAdapter;
 import android.widget.GridView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
@@ -52,6 +52,15 @@ public class MainActivity extends AppCompatActivity {
                 startActivityForResult(intent, 101);
             }
         });
+    }
+    public void onLoginClicked(View v){
+        Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+        startActivity(intent);
+    }
+
+    public void onResisterClicked(View v){
+        Intent intent = new Intent(getApplicationContext(), ResisterActivity.class);
+        startActivity(intent);
     }
 
     public class MainAdapter extends BaseAdapter {
@@ -105,4 +114,5 @@ public class MainActivity extends AppCompatActivity {
             return view;
         }
     }
+
 }

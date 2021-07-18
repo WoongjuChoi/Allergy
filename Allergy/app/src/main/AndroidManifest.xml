@@ -11,12 +11,15 @@
         android:theme="@style/Theme.Allergy">
         <activity android:name=".StoreListActivity" />
         <activity android:name=".MenuListActivity" />
+        <activity android:name=".ResisterActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
     </application>
 
