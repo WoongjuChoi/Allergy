@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
+    UserInfoManager infoManager = new UserInfoManager();
     Button resister;
     @Override
     protected void onCreate( Bundle savedInstanceState){
