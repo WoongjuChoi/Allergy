@@ -32,11 +32,12 @@ public class ResisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 //값 저장
-                if(pwd.getText().toString()==pwd_chk.getText().toString()) {
+                if(pwd.getText().toString().equals(pwd_chk.getText().toString())) {
                     UserName = name.getText().toString();
                     UserEmail = email.getText().toString();
                     UserPwd = pwd.getText().toString();
                     infoManager.putUserInfo(UserEmail,UserPwd);
+                    Snackbar.make(v, "회원가입 완료.", Snackbar.LENGTH_LONG).show();
                 } else {
                     Snackbar.make(v, "비밀번호가 다릅니다.", Snackbar.LENGTH_LONG).show();
                 }

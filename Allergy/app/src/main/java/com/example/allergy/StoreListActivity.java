@@ -1,6 +1,8 @@
 package com.example.allergy;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -30,13 +32,11 @@ public class StoreListActivity extends AppCompatActivity {
         title.setText(intent.getStringExtra("name")); //받아온 Intent에서 타이틀이름을 받아 세팅
         titleImage.setImageResource(intent.getIntExtra("Image", 0)); //받아온 Intent에서 타이틀이미지를 받아 세팅
 
-        ListView listView = (ListView) findViewById(R.id.fastList);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.fastList);
 
-        FastMenuAdapter fastMenuAdapter = new FastMenuAdapter(
-                getApplicationContext(),
-                R.layout.mainmenu_item_view,
-                items
-        );
+        MenuListActivity.Adapter adapter = new MenuListActivity.Adapter(items);
+        recyclerView.setAdapter(adapter);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this)); //리사이클러뷰에 리니어레이아웃매니저 지정
 
         if (intent.getStringExtra("name").equals("패스트푸드")) { // 패스트푸드 화면인 경우
             items.add(new MainMenuItem("맥도날드", R.drawable.logo));
@@ -55,72 +55,22 @@ public class StoreListActivity extends AppCompatActivity {
             items.add(new MainMenuItem("홍콩반점",R.drawable.jajangmyeon_hongkong_logo));
         }
 
-        listView.setAdapter(fastMenuAdapter);
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+        //클릭이벤트처리
+        adapter.setOnItemClickListener(new MenuListActivity.Adapter.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            public void onItemClick(View v, int pos) {
                 Intent intent = new Intent(
                         getApplicationContext(), // 현재화면의 제어권자
                         MenuListActivity.class); // 다음넘어갈 화면
 
-                intent.putExtra("StoreName", items.get(position).menuName);
-                intent.putExtra("StoreImage", items.get(position).resId2);
+                intent.putExtra("StoreName", items.get(pos).menuName);
+                intent.putExtra("StoreImage", items.get(pos).resId2);
 
                 startActivityForResult(intent, 101);
             }
         });
-    }
 
-
-    class FastMenuAdapter extends BaseAdapter {
-        Context context;
-        int layout;
-        ArrayList<MainMenuItem> items;
-
-        public FastMenuAdapter(Context context, int layout, ArrayList<MainMenuItem> items) {
-            this.context = context;
-            this.layout = layout;
-            this.items = items;
-        }
-
-        @Override
-        public boolean areAllItemsEnabled() {
-            return super.areAllItemsEnabled();
-        }
-
-        @Override
-        public int getCount() {
-            return items.size();
-        }
-
-        @Override
-        public Object getItem(int position) {
-            return position;
-        }
-
-        @Override
-        public long getItemId(int position) {
-            return position;
-        }
-
-        public void addItem(MainMenuItem item) {
-            items.add(item);
-        }
-
-        @Override
-        public View getView(int position, View convertView, ViewGroup parent) {
-            MenuItemView view = null;
-            if (convertView == null) {
-                view = new MenuItemView(getApplicationContext());
-            } else {
-                view = (MenuItemView) convertView;
-            }
-
-            MainMenuItem item = items.get(position);
-            view.setName(item.getMenuName());
-            view.setIcon(item.getResId());
-
-            return view;
-        }
+        adapter.notifyDataSetChanged();
     }
 }

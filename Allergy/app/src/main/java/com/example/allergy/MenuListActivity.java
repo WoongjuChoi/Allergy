@@ -13,6 +13,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.ArrayList;
 
 public class MenuListActivity extends AppCompatActivity {
@@ -69,10 +71,18 @@ public class MenuListActivity extends AppCompatActivity {
             items.add(new MainMenuItem("짜장면", R.drawable.jajanmyeon_hongkong_jajanmyeon));
         }
 
+        //클릭이벤트처리
+        adapter.setOnItemClickListener(new Adapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View v, int pos) {
+                Snackbar.make(v, "메뉴가 눌렸습니다.", Snackbar.LENGTH_LONG).show();
+            }
+        });
+
         adapter.notifyDataSetChanged();
     }
 
-    public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
+    public static class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         ArrayList<MainMenuItem> items = new ArrayList<MainMenuItem>();
 
         Adapter(ArrayList<MainMenuItem> list) {
@@ -89,6 +99,21 @@ public class MenuListActivity extends AppCompatActivity {
             return vh;
         }
 
+        //커스텀 리스너 인터페이스
+        public interface OnItemClickListener
+        {
+            void onItemClick(View v, int pos);
+        }
+
+
+        //리스너 객체 참조를 저장하는 변수
+        private OnItemClickListener mListener = null;
+
+        public void setOnItemClickListener(OnItemClickListener listener)
+        {
+            this.mListener = listener;
+        }
+
         @Override
         public void onBindViewHolder(MenuListActivity.Adapter.ViewHolder holder, int position) {
             MainMenuItem item = items.get(position);
@@ -102,12 +127,23 @@ public class MenuListActivity extends AppCompatActivity {
             return items.size();
         }
 
+        // 뷰홀더 클래스 정의
         public class ViewHolder extends RecyclerView.ViewHolder {
             ImageView icon ;
             TextView menuname ;
 
             ViewHolder(View itemView) {
                 super(itemView) ;
+
+                itemView.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        int pos = getAdapterPosition(); // 어뎁터 내 아이템의 위치를 받는다
+                        if (pos != RecyclerView.NO_POSITION) { //위치를 찾지 못한것이 아니라면
+                            mListener.onItemClick(v, pos); //커스텀리스너 인터페이스의 onItemClick메소드 호출
+                        }
+                    }
+                });
 
                 // 뷰 객체에 대한 참조. (hold strong reference)
                 icon = itemView.findViewById(R.id.image) ;
