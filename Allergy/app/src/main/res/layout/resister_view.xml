@@ -104,7 +104,7 @@
         app:layout_constraintHorizontal_bias="0.706"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resister_pwd_chk"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintVertical_bias="0.586" />
 
     <Button
         android:id="@+id/cancel_button"
@@ -117,5 +117,18 @@
         app:layout_constraintHorizontal_bias="0.578"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/resister_pwd_chk"
-        app:layout_constraintVertical_bias="0.382" />
+        app:layout_constraintVertical_bias="0.586" />
+
+    <EditText
+        android:id="@+id/business_registration_number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="사업자등록번호"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/resister_pwd_chk"
+        app:layout_constraintVertical_bias="0.188" />
 </androidx.constraintlayout.widget.ConstraintLayout>

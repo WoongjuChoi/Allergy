@@ -62,6 +62,10 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), ResisterActivity.class);
         startActivity(intent);
     }
+    public void onUserSettingClicked(View v){
+        Intent intent = new Intent(getApplicationContext(), UserSetting.class);
+        startActivity(intent);
+    }
 
     public class MainAdapter extends BaseAdapter {
         Context context;
