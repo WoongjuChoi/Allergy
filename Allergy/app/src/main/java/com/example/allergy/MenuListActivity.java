@@ -18,7 +18,7 @@ import com.google.android.material.snackbar.Snackbar;
 import java.util.ArrayList;
 
 public class MenuListActivity extends AppCompatActivity {
-    ArrayList<MainMenuItem> items = new ArrayList<MainMenuItem>();
+    ArrayList<AllergyMenuItem> items = new ArrayList<AllergyMenuItem>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class MenuListActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-        Adapter adapter = new Adapter(items);
+        AllergyAdapter adapter = new AllergyAdapter(items);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); //리사이클러뷰에 리니어레이아웃매니저 지정
 
@@ -39,40 +39,41 @@ public class MenuListActivity extends AppCompatActivity {
         storeLogo.setImageResource(intent.getIntExtra("StoreImage", 0)); //인텐트로 받은 가게로고 세팅
 
         if (intent.getStringExtra("StoreName").equals("맥도날드")) { //가게 이름이 맥도날드이면
-            items.add(new MainMenuItem("빅맥 베이컨", R.drawable.bigmacbacon));
-            items.add(new MainMenuItem("빅맥", R.drawable.bigmac));
-            items.add(new MainMenuItem("필레 오 피쉬", R.drawable.filet));
-            items.add(new MainMenuItem("더블 필레 오 피쉬", R.drawable.doublefilet));
-            items.add(new MainMenuItem("1955 버거", R.drawable.nineteenfiftyfive));
-            items.add(new MainMenuItem("맥스파이시 상하이 버거", R.drawable.shanghai));
-            items.add(new MainMenuItem("맥치킨", R.drawable.mcchicken));
-            items.add(new MainMenuItem("맥치킨 모짜렐라", R.drawable.mcchickienmozzarella));
-            items.add(new MainMenuItem("더블 불고기 버거", R.drawable.doublebulgogi));
-            items.add(new MainMenuItem("에그 불고기 버거", R.drawable.eggbulgogi));
-            items.add(new MainMenuItem("슈슈 버거", R.drawable.supremeshrimp));
-            items.add(new MainMenuItem("슈비 버거", R.drawable.shrimpbeef));
-            items.add(new MainMenuItem("베이컨 토마도 디럭스", R.drawable.bacontomato));
-            items.add(new MainMenuItem("더블 쿼터파운더 치즈", R.drawable.doublequarterpoundercheese));
-            items.add(new MainMenuItem("쿼터파운더 치즈", R.drawable.quarterpoundercheese));
-            items.add(new MainMenuItem("치즈버거", R.drawable.cheese));
-            items.add(new MainMenuItem("더블 치즈버거", R.drawable.doublecheese));
-            items.add(new MainMenuItem("햄버거", R.drawable.hamburger));
+            items.add(new AllergyMenuItem("창녕 갈릭 버거", "난류, 우유, 대두, 밀, 토마토, 쇠고기, 굴"));
+            items.add(new AllergyMenuItem("빅맥", "난류, 우유, 대두, 밀, 쇠고기"));
+            items.add(new AllergyMenuItem("필레 오 피쉬", "난류, 우유, 대두, 밀"));
+            items.add(new AllergyMenuItem("더블 필레 오 피쉬", "난류, 우유, 대두, 밀"));
+            items.add(new AllergyMenuItem("1955 버거", "난류, 우유, 대두, 밀, 돼지고기, 토마토, 쇠고기"));
+            items.add(new AllergyMenuItem("맥스파이시 상하이 버거", "난류, 대두, 밀, 토마토, 닭고기"));
+            items.add(new AllergyMenuItem("맥치킨", "난류, 대두, 밀, 닭고기"));
+            items.add(new AllergyMenuItem("맥치킨 모짜렐라", "난류, 우유, 대두, 밀, 토마토, 닭고기"));
+            items.add(new AllergyMenuItem("더블 불고기 버거", "난류, 우유, 대두, 밀, 돼지고기, 조개, 굴"));
+            items.add(new AllergyMenuItem("에그 불고기 버거", "난류, 대두, 밀, 돼지고기, 조개, 굴"));
+            items.add(new AllergyMenuItem("불고기 버거", "난류, 대두, 밀, 돼지고기, 조개, 굴"));
+            items.add(new AllergyMenuItem("슈슈 버거", "난류, 우유, 대두, 밀, 토마토, 새우, 쇠고기, 굴"));
+            items.add(new AllergyMenuItem("슈비 버거", "난류, 우유, 대두, 밀, 토마토, 새우, 쇠고기, 굴"));
+            items.add(new AllergyMenuItem("베이컨 토마도 디럭스", "난류, 우유, 대두, 밀, 돼지고기, 토마토, 쇠고기"));
+            items.add(new AllergyMenuItem("더블 쿼터파운더 치즈", "우유, 대두, 밀, 토마토, 쇠고기"));
+            items.add(new AllergyMenuItem("쿼터파운더 치즈", "우유, 대두, 밀, 토마토, 쇠고기"));
+            items.add(new AllergyMenuItem("치즈버거", "우유, 대두, 밀, 토마토, 쇠고기"));
+            items.add(new AllergyMenuItem("더블 치즈버거", "우유, 대두, 밀, 토마토, 쇠고기"));
+            items.add(new AllergyMenuItem("햄버거", "대두, 밀, 토마토, 쇠고기"));
         } else if ( intent.getStringExtra("StoreName").equals("버거킹")){
-            items.add(new MainMenuItem("와퍼", R.drawable.burgerking_whopper));
+            items.add(new AllergyMenuItem("와퍼", "밀, 대두, 토마토, 쇠고기, 난류"));
         } else if ( intent.getStringExtra("StoreName").equals("도미노")){
-            items.add(new MainMenuItem("블록버스터", R.drawable.pizza_domino_blockbuster));
+            items.add(new AllergyMenuItem("블록버스터", "계란, 대두, 밀, 돼지고기, 닭고기, 토마토, 우유, 새우, 쇠고기, 오징어, 바닷가재, 게, 굴"));
         } else if ( intent.getStringExtra("StoreName").equals("BBQ")){
-            items.add(new MainMenuItem("반반치킨", R.drawable.chicken_bbq_banban));
+            items.add(new AllergyMenuItem("반반치킨", "우유, 대두, 밀, 조개류, 쇠고기, 새우, 땅콩"));
         } else if ( intent.getStringExtra("StoreName").equals("스타벅스")){
-            items.add(new MainMenuItem("딸기레몬블렌디드", R.drawable.dessert_starbucks_strawberrylemonblended));
+            items.add(new AllergyMenuItem("딸기 딜라이트 요거트 블렌디드", "우유"));
         } else if ( intent.getStringExtra("StoreName").equals("한솥도시락")){
-            items.add(new MainMenuItem("치킨마요덮밥", R.drawable.lunchbox_hansot_chickenmayo));
+            items.add(new AllergyMenuItem("치킨마요덮밥", "난류, 우유, 대두, 밀, 돼지고기, 닭고기, 조개류"));
         } else if ( intent.getStringExtra("StoreName").equals("홍콩반점")){
-            items.add(new MainMenuItem("짜장면", R.drawable.jajanmyeon_hongkong_jajanmyeon));
+            items.add(new AllergyMenuItem("짜장면", " "));
         }
 
         //클릭이벤트처리
-        adapter.setOnItemClickListener(new Adapter.OnItemClickListener() {
+        adapter.setOnItemClickListener(new AllergyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int pos) {
                 Snackbar.make(v, "메뉴가 눌렸습니다.", Snackbar.LENGTH_LONG).show();
@@ -82,19 +83,19 @@ public class MenuListActivity extends AppCompatActivity {
         adapter.notifyDataSetChanged();
     }
 
-    public static class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
-        ArrayList<MainMenuItem> items = new ArrayList<MainMenuItem>();
+    public static class AllergyAdapter extends RecyclerView.Adapter<AllergyAdapter.ViewHolder>{
+        ArrayList<AllergyMenuItem> items = new ArrayList<AllergyMenuItem>();
 
-        Adapter(ArrayList<MainMenuItem> list) {
+        AllergyAdapter(ArrayList<AllergyMenuItem> list) {
             items = list;
         }
 
         @Override
-        public Adapter.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             Context context = parent.getContext();
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View view = inflater.inflate(R.layout.menu_item_view, parent,false);
-            Adapter.ViewHolder vh = new Adapter.ViewHolder(view);
+            View view = inflater.inflate(R.layout.allergy_menu_view, parent,false);
+            AllergyAdapter.ViewHolder vh = new AllergyAdapter.ViewHolder(view);
 
             return vh;
         }
@@ -115,11 +116,11 @@ public class MenuListActivity extends AppCompatActivity {
         }
 
         @Override
-        public void onBindViewHolder(MenuListActivity.Adapter.ViewHolder holder, int position) {
-            MainMenuItem item = items.get(position);
+        public void onBindViewHolder(MenuListActivity.AllergyAdapter.ViewHolder holder, int position) {
+            AllergyMenuItem item = items.get(position);
 
-            holder.icon.setImageResource(item.getResId());
-            holder.menuname.setText(item.getMenuName());
+            holder.menuName.setText(item.getMenuName());
+            holder.allergyInfo.setText(item.getAllergyInfo());
         }
 
         @Override
@@ -129,8 +130,8 @@ public class MenuListActivity extends AppCompatActivity {
 
         // 뷰홀더 클래스 정의
         public class ViewHolder extends RecyclerView.ViewHolder {
-            ImageView icon ;
-            TextView menuname ;
+            TextView menuName ;
+            TextView allergyInfo;
 
             ViewHolder(View itemView) {
                 super(itemView) ;
@@ -146,8 +147,8 @@ public class MenuListActivity extends AppCompatActivity {
                 });
 
                 // 뷰 객체에 대한 참조. (hold strong reference)
-                icon = itemView.findViewById(R.id.image) ;
-                menuname = itemView.findViewById(R.id.name) ;
+                menuName = itemView.findViewById(R.id.allergyMenuName);
+                allergyInfo = itemView.findViewById(R.id.allergyInformation);
             }
         }
     }
