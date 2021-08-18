@@ -1,288 +1,329 @@
 package com.example.allergy;
 
+import android.content.SharedPreferences;
+import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
+import android.view.View;
+import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.Switch;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class UserInfoSetting extends AppCompatActivity {
-    boolean checked1 ;
-    boolean checked2 ;
-    boolean checked3 ;
-    boolean checked4 ;
-    boolean checked5 ;
-    boolean checked6 ;
-    boolean checked7 ;
-    boolean checked8 ;
-    boolean checked9 ;
-    boolean checked10 ;
-    boolean checked11 ;
-    boolean checked12 ;
-    boolean checked13 ;
-    boolean checked14 ;
-    boolean checked15 ;
-    boolean checked16 ;
-    boolean checked17 ;
-    boolean checked18 ;
-    boolean checked19 ;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+
+public class UserInfoSetting extends AppCompatActivity implements View.OnClickListener {
+    Button button;
+    ArrayList<String> allergyList;
+    SharedPreferences.Editor prefEditor;
+    SharedPreferences prefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_info_setting);
-        Switch switch1 = (Switch) findViewById(R.id.switch1);
-        Switch switch2 = (Switch) findViewById(R.id.switch2);
-        Switch switch3 = (Switch) findViewById(R.id.switch3);
-        Switch switch4 = (Switch) findViewById(R.id.switch4);
-        Switch switch5 = (Switch) findViewById(R.id.switch5);
-        Switch switch6 = (Switch) findViewById(R.id.switch6);
-        Switch switch7 = (Switch) findViewById(R.id.switch7);
-        Switch switch8 = (Switch) findViewById(R.id.switch8);
-        Switch switch9 = (Switch) findViewById(R.id.switch9);
-        Switch switch10 = (Switch) findViewById(R.id.switch10);
-        Switch switch11 = (Switch) findViewById(R.id.switch11);
-        Switch switch12 = (Switch) findViewById(R.id.switch12);
-        Switch switch13 = (Switch) findViewById(R.id.switch13);
-        Switch switch14 = (Switch) findViewById(R.id.switch14);
-        Switch switch15 = (Switch) findViewById(R.id.switch15);
-        Switch switch16 = (Switch) findViewById(R.id.switch16);
-        Switch switch17 = (Switch) findViewById(R.id.switch17);
-        Switch switch18 = (Switch) findViewById(R.id.switch18);
-        Switch switch19 = (Switch) findViewById(R.id.switch19);
-        switch1.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        button = (Button) findViewById(R.id.button3);
+        button.setOnClickListener(this);
+        
+        Switch Egg = (Switch) findViewById(R.id.switchEgg);
+        Egg.setChecked(prefs.getBoolean("Egg",false));
+        Switch Milk = (Switch) findViewById(R.id.switchMilk);
+        Milk.setChecked(prefs.getBoolean("Milk",false));
+        Switch Buckwheat = (Switch) findViewById(R.id.switchBuckwheat);
+        Buckwheat.setChecked(prefs.getBoolean("Buckwheat",false));
+        Switch Peanut = (Switch) findViewById(R.id.switchPeanut);
+        Peanut.setChecked(prefs.getBoolean("Peanut",false));
+        Switch Soybean = (Switch) findViewById(R.id.switchSoybean);
+        Soybean.setChecked(prefs.getBoolean("Soybean",false));
+        Switch Wheat = (Switch) findViewById(R.id.switchWheat);
+        Soybean.setChecked(prefs.getBoolean("Soybean",false));
+        Switch Crab = (Switch) findViewById(R.id.switchCrab);
+        Crab.setChecked(prefs.getBoolean("Crab",false));
+        Switch Shrimp = (Switch) findViewById(R.id.switchShrimp);
+        Shrimp.setChecked(prefs.getBoolean("Shrimp",false));
+        Switch Pork = (Switch) findViewById(R.id.switchPork);
+        Pork.setChecked(prefs.getBoolean("Pork",false));
+        Switch Tomato = (Switch) findViewById(R.id.switchTomato);
+        Tomato.setChecked(prefs.getBoolean("Tomato",false));
+        Switch SulfuricAcid = (Switch) findViewById(R.id.switchSulfuricAcid);
+        SulfuricAcid.setChecked(prefs.getBoolean("SulfuricAcid",false));
+        Switch Walnut = (Switch) findViewById(R.id.switchWalnut);
+        Walnut.setChecked(prefs.getBoolean("Walnut",false));
+        Switch Chicken = (Switch) findViewById(R.id.switchChicken);
+        Chicken.setChecked(prefs.getBoolean("Chicken",false));
+        Switch Beef = (Switch) findViewById(R.id.switchBeef);
+        Beef.setChecked(prefs.getBoolean("Beef",false));
+        Switch Squid = (Switch) findViewById(R.id.switchSquid);
+        Squid.setChecked(prefs.getBoolean("Squid",false));
+        Switch Shellfish = (Switch) findViewById(R.id.switchShellfish);
+        Shellfish.setChecked(prefs.getBoolean("Shellfish",false));
+        Switch Pinenut = (Switch) findViewById(R.id.switchPinenut);
+        Pinenut.setChecked(prefs.getBoolean("Pinenut",false));
+        Switch Peach = (Switch) findViewById(R.id.switchPeach);
+        Peach.setChecked(prefs.getBoolean("Peach",false));
+        
+        Egg.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    switch1.setChecked(isChecked);
-                    checked1=isChecked;
+                    prefEditor.putBoolean("Egg",true);
+                    allergyList.add("달걀");
                 }else{
-                    switch1.setChecked(false);
-                    checked1=false;
+                    prefEditor.putBoolean("Egg",false);
+                    allergyList.remove("달걀");
                 }
             }
         });
-        switch2.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+        Milk.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
-                    switch2.setChecked(isChecked);
-                    checked2=isChecked;
-                }else{
-                    switch2.setChecked(false);
-                    checked2=false;
-                }
-            }
-        });
-        switch3.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch3.setChecked(isChecked);
-                    checked3=isChecked;
-                }else{
-                    switch3.setChecked(false);
-                    checked3=false;
-                }
-            }
-        });
-        switch4.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch4.setChecked(isChecked);
-                    checked4=isChecked;
-                }else{
-                    switch4.setChecked(false);
-                    checked4=false;
-                }
-            }
-        });
-        switch5.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch5.setChecked(isChecked);
-                    checked5=isChecked;
-                }else{
-                    switch5.setChecked(false);
-                    checked5=false;
-                }
-            }
-        });
-        switch6.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch6.setChecked(isChecked);
-                    checked6=isChecked;
-                }else{
-                    switch6.setChecked(false);
-                    checked6=false;
-                }
-            }
-        });
-        switch7.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch7.setChecked(isChecked);
-                    checked7=isChecked;
-                }else{
-                    switch7.setChecked(false);
-                    checked7=false;
-                }
-            }
-        });
-        switch8.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch8.setChecked(isChecked);
-                    checked8=isChecked;
-                }else{
-                    switch9.setChecked(false);
-                    checked9=false;
-                }
-            }
-        });
-        switch9.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch9.setChecked(isChecked);
-                    checked9=isChecked;
-                }else{
-                    switch9.setChecked(false);
-                    checked9=false;
-                }
-            }
-        });
-        switch10.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch10.setChecked(isChecked);
-                    checked10=isChecked;
-                } else{
-                    switch10.setChecked(false);
-                    checked10=false;
-                }
-            }
-        });
-        switch11.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch11.setChecked(isChecked);
-                    checked11=isChecked;
-                }else{
-                    switch11.setChecked(false);
-                    checked11=false;
-                }
-            }
-        });
-        switch12.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch12.setChecked(isChecked);
-                    checked12=isChecked;
-                }else{
-                    switch12.setChecked(false);
-                    checked12=false;
-                }
-            }
-        });
-        switch13.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch13.setChecked(isChecked);
-                    checked13=isChecked;
-                }else{
-                    switch13.setChecked(false);
-                    checked13=false;
-                }
-            }
-        });
-        switch14.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch14.setChecked(isChecked);
-                    checked14=isChecked;
-                }else{
-                    switch14.setChecked(false);
-                    checked14=false;
-                }
-            }
-        });
-        switch15.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch15.setChecked(isChecked);
-                    checked15=isChecked;
-                }else{
-                    switch15.setChecked(false);
-                    checked15=false;
-                }
-            }
-        });
-        switch16.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch16.setChecked(isChecked);
-                    checked16=isChecked;
-                }else{
-                    switch16.setChecked(false);
-                    checked16=false;
-                }
-            }
-        });
-        switch17.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch17.setChecked(isChecked);
-                    checked17=isChecked;
-                }else{
-                    switch17.setChecked(false);
-                    checked17=false;
-                }
-            }
-        });
-        switch18.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch18.setChecked(isChecked);
-                    checked18=isChecked;
-                }else{
-                    switch18.setChecked(false);
-                    checked18=false;
-                }
-            }
-        });
-        switch19.setOnCheckedChangeListener(new OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked){
-                    switch19.setChecked(isChecked);
-                    checked19=isChecked;
-                }else{
-                    switch19.setChecked(false);
-                    checked19=false;
-                }
-            }
-        });
+                    prefEditor.putBoolean("Milk",true);
+                    allergyList.add("우유");
 
+                }else{
+                    prefEditor.putBoolean("Milk",false);
+                    allergyList.remove("우유");
+                }
+            }
+        });
+        Buckwheat.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Buckwheat",true);
+                    allergyList.add("메밀");
 
+                }else{
+                    prefEditor.putBoolean("Buckwheat",false);
+                    allergyList.remove("메밀");
+                }
+            }
+        });
+        Peanut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Peanut",true);
+                    allergyList.add("땅콩");
 
+                }else{
+                    prefEditor.putBoolean("Peanut",false);
+                    allergyList.remove("땅콩");
+                }
+            }
+        });
+        Soybean.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Soybean",true);
+                    allergyList.add("대두");
+
+                }else{
+                    prefEditor.putBoolean("Soybean",false);
+                    allergyList.remove("대두");
+                }
+            }
+        });
+        Wheat.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Wheat",true);
+                    allergyList.add("밀");
+
+                }else{
+                    prefEditor.putBoolean("Wheat",false);
+                    allergyList.remove("밀");
+                }
+            }
+        });
+        Crab.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Crab",true);
+                    allergyList.add("게");
+
+                }else{
+                    prefEditor.putBoolean("Crab",false);
+                    allergyList.remove("게");
+                }
+            }
+        });
+        Shrimp.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Shrimp",true);
+                    allergyList.add("새우");
+
+                }else{
+                    prefEditor.putBoolean("Shrimp",false);
+                    allergyList.remove("새우");
+                }
+            }
+        });
+        Pork.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Pork",true);
+                    allergyList.add("돼지고기");
+
+                }else{
+                    prefEditor.putBoolean("Pork",false);
+                    allergyList.remove("돼지고기");
+                }
+            }
+        });
+        Tomato.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Tomato",true);
+                    allergyList.add("토마토");
+
+                }else{
+                    prefEditor.putBoolean("Tomata",false);
+                    allergyList.remove("토마토");
+                }
+            }
+        });
+        SulfuricAcid.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("SulfuricAcid",true);
+                    allergyList.add("아황산");
+
+                }else{
+                    prefEditor.putBoolean("SulfuricAcid",false);
+                    allergyList.remove("아황산");
+                }
+            }
+        });
+        Walnut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Walnut",true);
+                    allergyList.add("호두");
+
+                }else{
+                    prefEditor.putBoolean("Walnut",false);
+                    allergyList.remove("호두");
+                }
+            }
+        });
+        Chicken.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Chicken",true);
+                    allergyList.add("닭고기");
+
+                }else{
+                    prefEditor.putBoolean("Chicken",false);
+                    allergyList.remove("닭고기");
+                }
+            }
+        });
+        Beef.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Beef",true);
+                    allergyList.add("쇠고기");
+
+                }else{
+                    prefEditor.putBoolean("Beef",false);
+                    allergyList.remove("쇠고기");
+                }
+            }
+        });
+        Squid.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Squid",true);
+                    allergyList.add("오징어");
+
+                }else{
+                    prefEditor.putBoolean("Squid",false);
+                    allergyList.remove("오징어");
+                }
+            }
+        });
+        Shellfish.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Shellfish",true);
+                    allergyList.add("조개류");
+
+                }else{
+                    prefEditor.putBoolean("Shellfish",false);
+                    allergyList.remove("조개류");
+                }
+            }
+        });
+        Pinenut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Pinenut",true);
+                    allergyList.add("잣");
+
+                }else{
+                    prefEditor.putBoolean("Pinenut",false);
+                    allergyList.remove("잣");
+                }
+            }
+        });
+        Peach.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Peach",true);
+                    allergyList.add("복숭아");
+
+                }else{
+                    prefEditor.putBoolean("Peach",false);
+                    allergyList.remove("복숭아");
+                }
+            }
+        });
     }
 
+    @Override
+    public void onClick(View v) {
+        Toast.makeText(UserInfoSetting.this, "저장되었습니다.", Toast.LENGTH_LONG).show();
+        SaveAllergyData(allergyList);
+    }
+    private void SaveAllergyData(ArrayList<String> allergyList){
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        Editor editor = preferences.edit();
+        Gson gson = new Gson();
+        String json = gson.toJson(allergyList);
+        editor.putString("MyAllergies", json);
+        editor.apply();
+
+    }
+    private ArrayList<String> ReadAllergyData(){
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+        Gson gson = new Gson();
+        String json = sharedPrefs.getString("MyAllergies","EMPTY");
+        Type type = new TypeToken<ArrayList<String>>(){}.getType();
+        ArrayList<String> arrayList = gson.fromJson(json, type);
+        return arrayList;
+    }
 }

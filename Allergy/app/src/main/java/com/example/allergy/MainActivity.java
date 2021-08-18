@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void onUserSettingClicked(View v){
-        Intent intent = new Intent(getApplicationContext(), UserSetting.class);
+        Intent intent = new Intent(getApplicationContext(), UserInfoSetting.class);
         startActivity(intent);
     }
 

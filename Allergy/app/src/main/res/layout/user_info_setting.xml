@@ -24,7 +24,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal"
         android:weightSum="1">
 
@@ -44,7 +44,7 @@
                     android:orientation="vertical">
 
                     <Switch
-                        android:id="@+id/switch1"
+                        android:id="@+id/switchEgg"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:checked="false"
@@ -52,67 +52,60 @@
                         android:text="계란류" />
 
                     <Switch
-                        android:id="@+id/switch2"
+                        android:id="@+id/switchMilk"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="우유" />
 
                     <Switch
-                        android:id="@+id/switch3"
+                        android:id="@+id/switchBuckwheat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="메밀" />
 
                     <Switch
-                        android:id="@+id/switch4"
+                        android:id="@+id/switchPeanut"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="땅콩" />
 
                     <Switch
-                        android:id="@+id/switch5"
+                        android:id="@+id/switchSoybean"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="대두" />
 
                     <Switch
-                        android:id="@+id/switch6"
+                        android:id="@+id/switchWheat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="밀" />
 
                     <Switch
-                        android:id="@+id/switch7"
+                        android:id="@+id/switchCrab"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="게" />
 
                     <Switch
-                        android:id="@+id/switch8"
+                        android:id="@+id/switchShrimp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="새우" />
 
                     <Switch
-                        android:id="@+id/switch9"
+                        android:id="@+id/switchPork"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="돼지고기" />
-
-                    <Switch
-                        android:id="@+id/switch10"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="복숭아" />
 
                 </LinearLayout>
             </ScrollView>
@@ -134,67 +127,68 @@
                     android:orientation="vertical">
 
                     <Switch
-                        android:id="@+id/switch11"
+                        android:id="@+id/switchTomato"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="토마토" />
 
                     <Switch
-                        android:id="@+id/switch12"
+                        android:id="@+id/switchSulfuricAcid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="아황산" />
 
                     <Switch
-                        android:id="@+id/switch13"
+                        android:id="@+id/switchWalnut"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="호두" />
 
-                    <Switch
-                        android:id="@+id/switch14"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:text="호두" />
 
                     <Switch
-                        android:id="@+id/switch15"
+                        android:id="@+id/switchChicken"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="닭고기" />
 
                     <Switch
-                        android:id="@+id/switch16"
+                        android:id="@+id/switchBeef"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="쇠고기" />
 
                     <Switch
-                        android:id="@+id/switch17"
+                        android:id="@+id/switchSquid"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="오징어" />
 
                     <Switch
-                        android:id="@+id/switch18"
+                        android:id="@+id/switchShellfish"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="조개류" />
 
                     <Switch
-                        android:id="@+id/switch19"
+                        android:id="@+id/switchPinenut"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
                         android:text="잣" />
+
+                    <Switch
+                        android:id="@+id/switchPeach"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="복숭아" />
 
                 </LinearLayout>
             </ScrollView>
@@ -202,5 +196,13 @@
 
 
     </LinearLayout>
+
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_horizontal"
+        android:layout_weight="0"
+        android:text="저장하기" />
 
 </LinearLayout>

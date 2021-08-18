@@ -9,7 +9,6 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Allergy">
-        <activity android:name=".UserSetting"></activity>
         <activity android:name=".StoreListActivity" />
         <activity android:name=".MenuListActivity" />
         <activity android:name=".ResisterActivity" />
