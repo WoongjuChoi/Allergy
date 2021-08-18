@@ -1,5 +1,6 @@
 package com.example.allergy;
 
+import android.app.Activity;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
@@ -26,17 +27,19 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
     SharedPreferences prefs;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_info_setting);
+        prefs = getSharedPreferences("pref", Activity.MODE_PRIVATE);
+        prefEditor = prefs.edit();
         button = (Button) findViewById(R.id.button3);
         button.setOnClickListener(this);
+        allergyList = new ArrayList<>();
         
-        Switch Egg = (Switch) findViewById(R.id.switchEgg);
+        Switch Egg = findViewById(R.id.switchEgg);
         Egg.setChecked(prefs.getBoolean("Egg",false));
-        Switch Milk = (Switch) findViewById(R.id.switchMilk);
+        Switch Milk = findViewById(R.id.switchMilk);
         Milk.setChecked(prefs.getBoolean("Milk",false));
-        Switch Buckwheat = (Switch) findViewById(R.id.switchBuckwheat);
+        Switch Buckwheat = findViewById(R.id.switchBuckwheat);
         Buckwheat.setChecked(prefs.getBoolean("Buckwheat",false));
         Switch Peanut = (Switch) findViewById(R.id.switchPeanut);
         Peanut.setChecked(prefs.getBoolean("Peanut",false));
@@ -79,6 +82,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Egg",false);
                     allergyList.remove("달걀");
                 }
+                prefEditor.apply();
             }
         });
         Milk.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -92,6 +96,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Milk",false);
                     allergyList.remove("우유");
                 }
+                prefEditor.apply();
             }
         });
         Buckwheat.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -105,6 +110,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Buckwheat",false);
                     allergyList.remove("메밀");
                 }
+                prefEditor.apply();
             }
         });
         Peanut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -118,6 +124,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Peanut",false);
                     allergyList.remove("땅콩");
                 }
+                prefEditor.apply();
             }
         });
         Soybean.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -131,6 +138,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Soybean",false);
                     allergyList.remove("대두");
                 }
+                prefEditor.apply();
             }
         });
         Wheat.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -144,6 +152,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Wheat",false);
                     allergyList.remove("밀");
                 }
+                prefEditor.apply();
             }
         });
         Crab.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -157,6 +166,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Crab",false);
                     allergyList.remove("게");
                 }
+                prefEditor.apply();
             }
         });
         Shrimp.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -170,6 +180,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Shrimp",false);
                     allergyList.remove("새우");
                 }
+                prefEditor.apply();
             }
         });
         Pork.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -183,6 +194,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Pork",false);
                     allergyList.remove("돼지고기");
                 }
+                prefEditor.apply();
             }
         });
         Tomato.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -196,6 +208,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Tomata",false);
                     allergyList.remove("토마토");
                 }
+                prefEditor.apply();
             }
         });
         SulfuricAcid.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -209,6 +222,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("SulfuricAcid",false);
                     allergyList.remove("아황산");
                 }
+                prefEditor.apply();
             }
         });
         Walnut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -222,6 +236,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Walnut",false);
                     allergyList.remove("호두");
                 }
+                prefEditor.apply();
             }
         });
         Chicken.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -235,6 +250,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Chicken",false);
                     allergyList.remove("닭고기");
                 }
+                prefEditor.apply();
             }
         });
         Beef.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -248,6 +264,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Beef",false);
                     allergyList.remove("쇠고기");
                 }
+                prefEditor.apply();
             }
         });
         Squid.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -261,6 +278,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Squid",false);
                     allergyList.remove("오징어");
                 }
+                prefEditor.apply();
             }
         });
         Shellfish.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -274,6 +292,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Shellfish",false);
                     allergyList.remove("조개류");
                 }
+                prefEditor.apply();
             }
         });
         Pinenut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -287,6 +306,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Pinenut",false);
                     allergyList.remove("잣");
                 }
+                prefEditor.apply();
             }
         });
         Peach.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -300,6 +320,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     prefEditor.putBoolean("Peach",false);
                     allergyList.remove("복숭아");
                 }
+                prefEditor.apply();
             }
         });
     }
@@ -325,5 +346,12 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
         Type type = new TypeToken<ArrayList<String>>(){}.getType();
         ArrayList<String> arrayList = gson.fromJson(json, type);
         return arrayList;
+    }
+    @Override
+    protected void onStop(){
+        SharedPreferences sharedPreferences = getSharedPreferences("sFile", MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        super.onStop();
+        editor.commit();
     }
 }
