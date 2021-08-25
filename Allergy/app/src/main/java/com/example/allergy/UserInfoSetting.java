@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 public class UserInfoSetting extends AppCompatActivity implements View.OnClickListener {
     Button button;
-    ArrayList<String> allergyList;
+    public static ArrayList<String> allergyList;
     SharedPreferences.Editor prefEditor;
     SharedPreferences prefs;
     @Override

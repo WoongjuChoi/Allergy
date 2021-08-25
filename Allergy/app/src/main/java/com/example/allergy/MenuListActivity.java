@@ -8,17 +8,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
 
 public class MenuListActivity extends AppCompatActivity {
-    ArrayList<AllergyMenuItem> items = new ArrayList<AllergyMenuItem>();
+    ArrayList<AllergyMenuItem> items = new ArrayList<AllergyMenuItem>();    // 받아온 메뉴 전체를 저장
+    public static ArrayList<AllergyMenuItem> allergyItems = new ArrayList<AllergyMenuItem>(); // 알러지에 해당하는 메뉴들
+    public static ArrayList<AllergyMenuItem> nonAllergyItems = new ArrayList<AllergyMenuItem>();  // 알러지에 해당하지 않는 메뉴들
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +31,7 @@ public class MenuListActivity extends AppCompatActivity {
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
-        AllergyAdapter adapter = new AllergyAdapter(items);
+        AllergyAdapter adapter = new AllergyAdapter(nonAllergyItems);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); //리사이클러뷰에 리니어레이아웃매니저 지정
 
@@ -39,7 +43,7 @@ public class MenuListActivity extends AppCompatActivity {
         storeLogo.setImageResource(intent.getIntExtra("StoreImage", 0)); //인텐트로 받은 가게로고 세팅
 
         if (intent.getStringExtra("StoreName").equals("맥도날드")) { //가게 이름이 맥도날드이면
-            items.add(new AllergyMenuItem("창녕 갈릭 버거", "난류, 우유, 대두, 밀, 토마토, 쇠고기, 굴"));
+            items.add(new AllergyMenuItem("창녕 갈릭 버거", "난류, 우유, 대두, 밀, 토마토, 쇠고기, 조개류"));
             items.add(new AllergyMenuItem("빅맥", "난류, 우유, 대두, 밀, 쇠고기"));
             items.add(new AllergyMenuItem("필레 오 피쉬", "난류, 우유, 대두, 밀"));
             items.add(new AllergyMenuItem("더블 필레 오 피쉬", "난류, 우유, 대두, 밀"));
@@ -47,11 +51,11 @@ public class MenuListActivity extends AppCompatActivity {
             items.add(new AllergyMenuItem("맥스파이시 상하이 버거", "난류, 대두, 밀, 토마토, 닭고기"));
             items.add(new AllergyMenuItem("맥치킨", "난류, 대두, 밀, 닭고기"));
             items.add(new AllergyMenuItem("맥치킨 모짜렐라", "난류, 우유, 대두, 밀, 토마토, 닭고기"));
-            items.add(new AllergyMenuItem("더블 불고기 버거", "난류, 우유, 대두, 밀, 돼지고기, 조개, 굴"));
-            items.add(new AllergyMenuItem("에그 불고기 버거", "난류, 대두, 밀, 돼지고기, 조개, 굴"));
-            items.add(new AllergyMenuItem("불고기 버거", "난류, 대두, 밀, 돼지고기, 조개, 굴"));
-            items.add(new AllergyMenuItem("슈슈 버거", "난류, 우유, 대두, 밀, 토마토, 새우, 쇠고기, 굴"));
-            items.add(new AllergyMenuItem("슈비 버거", "난류, 우유, 대두, 밀, 토마토, 새우, 쇠고기, 굴"));
+            items.add(new AllergyMenuItem("더블 불고기 버거", "난류, 우유, 대두, 밀, 돼지고기, 조개, 조개류"));
+            items.add(new AllergyMenuItem("에그 불고기 버거", "난류, 대두, 밀, 돼지고기, 조개, 조개류"));
+            items.add(new AllergyMenuItem("불고기 버거", "난류, 대두, 밀, 돼지고기, 조개, 조개류"));
+            items.add(new AllergyMenuItem("슈슈 버거", "난류, 우유, 대두, 밀, 토마토, 새우, 쇠고기, 조개류"));
+            items.add(new AllergyMenuItem("슈비 버거", "난류, 우유, 대두, 밀, 토마토, 새우, 쇠고기, 조개류"));
             items.add(new AllergyMenuItem("베이컨 토마도 디럭스", "난류, 우유, 대두, 밀, 돼지고기, 토마토, 쇠고기"));
             items.add(new AllergyMenuItem("더블 쿼터파운더 치즈", "우유, 대두, 밀, 토마토, 쇠고기"));
             items.add(new AllergyMenuItem("쿼터파운더 치즈", "우유, 대두, 밀, 토마토, 쇠고기"));
@@ -61,7 +65,7 @@ public class MenuListActivity extends AppCompatActivity {
         } else if ( intent.getStringExtra("StoreName").equals("버거킹")){
             items.add(new AllergyMenuItem("와퍼", "밀, 대두, 토마토, 쇠고기, 난류"));
         } else if ( intent.getStringExtra("StoreName").equals("도미노")){
-            items.add(new AllergyMenuItem("블록버스터", "계란, 대두, 밀, 돼지고기, 닭고기, 토마토, 우유, 새우, 쇠고기, 오징어, 바닷가재, 게, 굴"));
+            items.add(new AllergyMenuItem("블록버스터", "계란, 대두, 밀, 돼지고기, 닭고기, 토마토, 우유, 새우, 쇠고기, 오징어, 바닷가재, 게, 조개류"));
         } else if ( intent.getStringExtra("StoreName").equals("BBQ")){
             items.add(new AllergyMenuItem("반반치킨", "우유, 대두, 밀, 조개류, 쇠고기, 새우, 땅콩"));
         } else if ( intent.getStringExtra("StoreName").equals("스타벅스")){
@@ -71,6 +75,10 @@ public class MenuListActivity extends AppCompatActivity {
         } else if ( intent.getStringExtra("StoreName").equals("홍콩반점")){
             items.add(new AllergyMenuItem("짜장면", " "));
         }
+
+        SeparateAllergyMenu(items); // 알러지 여부에 따라 분리
+
+
 
         //클릭이벤트처리
         adapter.setOnItemClickListener(new AllergyAdapter.OnItemClickListener() {
@@ -149,6 +157,25 @@ public class MenuListActivity extends AppCompatActivity {
                 // 뷰 객체에 대한 참조. (hold strong reference)
                 menuName = itemView.findViewById(R.id.allergyMenuName);
                 allergyInfo = itemView.findViewById(R.id.allergyInformation);
+            }
+        }
+    }
+
+    public void SeparateAllergyMenu(ArrayList<AllergyMenuItem> item) {
+        ArrayList<String> allergies = UserInfoSetting.allergyList;  // 사용자의 알러지정보를 저장한 문자열 ArrayList
+        int isAllergy = 0;
+        for(AllergyMenuItem i : item) {
+            for(String j : allergies) {
+                if (i.allergy.contains(j)) { // 메뉴가 사용자 알러지정보와 일치하는 알러지정보를 가지고있으면
+                    MenuListActivity.allergyItems.add(i); // 알러지 메뉴 리스트에 추가
+                    isAllergy = 1;
+                }
+            }
+            if(isAllergy == 0) { // for문을 도는동안 알러지에 걸린것이 없다면
+                MenuListActivity.nonAllergyItems.add(i); // 알러지 없는 메뉴에 추가
+            }
+            else {
+                isAllergy = 0;
             }
         }
     }
