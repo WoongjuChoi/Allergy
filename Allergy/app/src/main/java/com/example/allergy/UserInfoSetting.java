@@ -71,16 +71,20 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
         Pinenut.setChecked(prefs.getBoolean("Pinenut",false));
         Switch Peach = (Switch) findViewById(R.id.switchPeach);
         Peach.setChecked(prefs.getBoolean("Peach",false));
+        Switch Lobster = (Switch) findViewById(R.id.switchLobster);
+        Lobster.setChecked(prefs.getBoolean("바닷가재",false));
         
         Egg.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
                     prefEditor.putBoolean("Egg",true);
-                    allergyList.add("달걀");
+                    allergyList.add("난류");
+                    allergyList.add("계란");
                 }else{
                     prefEditor.putBoolean("Egg",false);
-                    allergyList.remove("달걀");
+                    allergyList.remove("난류");
+                    allergyList.remove("계란");
                 }
                 prefEditor.apply();
             }
@@ -287,10 +291,12 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                 if(isChecked){
                     prefEditor.putBoolean("Shellfish",true);
                     allergyList.add("조개류");
+                    allergyList.add("굴");
 
                 }else{
                     prefEditor.putBoolean("Shellfish",false);
                     allergyList.remove("조개류");
+                    allergyList.remove("굴");
                 }
                 prefEditor.apply();
             }
@@ -322,6 +328,21 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                 }
                 prefEditor.apply();
             }
+        });
+        Lobster.setOnCheckedChangeListener(new OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    prefEditor.putBoolean("Lobster",true);
+                    allergyList.add("바닷가재");
+
+                }else{
+                    prefEditor.putBoolean("Lobster",false);
+                    allergyList.remove("바닷가재");
+                }
+                prefEditor.apply();
+            }
+
         });
     }
 
