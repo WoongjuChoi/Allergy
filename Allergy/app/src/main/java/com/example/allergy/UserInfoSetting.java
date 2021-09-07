@@ -209,7 +209,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     allergyList.add("토마토");
 
                 }else{
-                    prefEditor.putBoolean("Tomata",false);
+                    prefEditor.putBoolean("Tomato",false);
                     allergyList.remove("토마토");
                 }
                 prefEditor.apply();
