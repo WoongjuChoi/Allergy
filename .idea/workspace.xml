@@ -36,7 +36,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@LGMV300Ld8d45577]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\JWJ\.android\avd\Pixel_2_API_30.avd]" />
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Allergy\exportToHTML" />
   </component>
@@ -77,12 +77,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="layoutResourceFile" />
+        <option value="resourceFile" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1siZGtAd17F5BgTYRabG6D8iawo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -99,10 +100,10 @@
     <property name="android-custom-viewD:/capstone/Allergy/Allergy/app/src/main/java/com/example/allergy/McMenuItemView.java_SELECTED" value="McMenuItemView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Allergy" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../LoginExample2" />
     <property name="multi-representation-previewC:/Users/dndwn/AndroidStudioProjects/Allergy/app/src/main/java/com/example/allergy/MainMenuView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/dndwn/AndroidStudioProjects/Allergy/app/src/main/java/com/example/allergy/McMenuItemView.java_selected" value="Custom views" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -122,9 +123,7 @@
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Allergy.app" />
@@ -209,52 +208,57 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="1172" y="320" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1621359702728">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1172" y="320" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1621359702728" />
-    <state x="1246" y="225" key="#com.intellij.ide.util.MemberChooser" timestamp="1621990461794">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1246" y="225" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1621990461794" />
     <state x="1171" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1625679323108">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1171" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625679323108" />
-    <state x="162" y="272" key="AndroidCreateResourceFileDialog" timestamp="1625113306908">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="860" y="274" key="AndroidCreateResourceDirectoryDialog" timestamp="1631436792991">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="860" y="274" key="AndroidCreateResourceDirectoryDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1631436792991" />
+    <state x="216" y="272" key="AndroidCreateResourceFileDialog" timestamp="1631436811618">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="162" y="272" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625113306908" />
-    <state x="1221" y="275" key="FileChooserDialogImpl" timestamp="1625716005863">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="216" y="272" key="AndroidCreateResourceFileDialog/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1631436811618" />
+    <state x="1628" y="275" key="FileChooserDialogImpl" timestamp="1631441406744">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1221" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1625716005863" />
-    <state width="913" height="279" key="GridCell.Tab.0.bottom" timestamp="1625690619844">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="1628" y="275" key="FileChooserDialogImpl/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1631441406744" />
+    <state width="2517" height="235" key="GridCell.Tab.0.bottom" timestamp="1631540325029">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="913" height="279" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1625690619844" />
-    <state width="913" height="279" key="GridCell.Tab.0.center" timestamp="1625690619844">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="235" key="GridCell.Tab.0.bottom/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1631540325029" />
+    <state width="2517" height="235" key="GridCell.Tab.0.center" timestamp="1631540325029">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="913" height="279" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1625690619844" />
-    <state width="913" height="279" key="GridCell.Tab.0.left" timestamp="1625690619844">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="235" key="GridCell.Tab.0.center/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1631540325029" />
+    <state width="2517" height="235" key="GridCell.Tab.0.left" timestamp="1631540325028">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="913" height="279" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1625690619844" />
-    <state width="913" height="279" key="GridCell.Tab.0.right" timestamp="1625690619844">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="235" key="GridCell.Tab.0.left/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1631540325028" />
+    <state width="2517" height="235" key="GridCell.Tab.0.right" timestamp="1631540325029">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="913" height="279" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1625690619844" />
-    <state x="208" y="190" key="SettingsEditor" timestamp="1625659017062">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state width="2517" height="235" key="GridCell.Tab.0.right/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1631540325029" />
+    <state x="277" y="190" key="SettingsEditor" timestamp="1631540385117">
+      <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="208" y="190" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1625659017062" />
-    <state x="1241" y="297" key="chooseDestDirectoryDialog" timestamp="1621990006684">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1241" y="297" key="chooseDestDirectoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1621990006684" />
+    <state x="277" y="190" key="SettingsEditor/0.0.2560.1040/2560.0.1920.1040@0.0.2560.1040" timestamp="1631540385117" />
     <state x="1144" y="362" key="edit.logcat.filter.dialog.dimensions" timestamp="1625120230853">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
