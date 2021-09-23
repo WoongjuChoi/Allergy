@@ -5,6 +5,9 @@
       <config />
     </shared>
   </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="NONE" />
   </component>
@@ -28,11 +31,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ea46e38-48c4-4e2e-83a9-3a7cfe3a561c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/MenuListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/MenuListActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/UserInfoSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/UserInfoSetting.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/user_info_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/user_info_setting.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,6 +67,12 @@
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
                 <item name="Allergy" type="f1a62948:ProjectNode" />
                 <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="Allergy" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+                <item name="Dependencies" type="6de06a37:ExternalSystemViewDefaultContributor$MyDependenciesNode" />
               </path>
             </expand>
             <select />
@@ -94,6 +105,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="android-custom-viewC:/Users/User/AndroidStudioProjects/git/Allergy/Allergy/app/src/main/java/com/example/allergy/MainMenuView.java_SELECTED" value="MainMenuView" />
     <property name="android-custom-viewC:/Users/User/AndroidStudioProjects/git/Allergy/Allergy/app/src/main/java/com/example/allergy/MenuItemView.java_SELECTED" value="MenuItemView" />
+    <property name="ignore.virus.scanning.warn.message" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
@@ -222,10 +234,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1533" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1631413776591" />
-    <state x="1285" y="100" width="1185" height="832" key="AVDManager" timestamp="1627560716189">
+    <state x="1285" y="100" width="1185" height="832" key="AVDManager" timestamp="1632364389579">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="1285" y="100" width="1185" height="832" key="AVDManager/0.0.2560.1040@0.0.2560.1040" timestamp="1627560716189" />
+    <state x="1285" y="100" width="1185" height="832" key="AVDManager/0.0.2560.1040@0.0.2560.1040" timestamp="1632364389579" />
     <state x="1458" y="275" key="AndroidCreateResourceFileDialog" timestamp="1626916581802">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -234,30 +246,30 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1658" y="275" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1631427502290" />
-    <state width="1296" height="278" key="GridCell.Tab.0.bottom" timestamp="1631427595966">
+    <state width="1669" height="277" key="GridCell.Tab.0.bottom" timestamp="1632364127976">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1296" height="278" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1631427595966" />
-    <state width="1296" height="278" key="GridCell.Tab.0.center" timestamp="1631427595966">
+    <state width="1669" height="277" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1632364127976" />
+    <state width="1669" height="277" key="GridCell.Tab.0.center" timestamp="1632364127976">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1296" height="278" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1631427595966" />
-    <state width="1296" height="278" key="GridCell.Tab.0.left" timestamp="1631427595966">
+    <state width="1669" height="277" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1632364127976" />
+    <state width="1669" height="277" key="GridCell.Tab.0.left" timestamp="1632364127976">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1296" height="278" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1631427595966" />
-    <state width="1296" height="278" key="GridCell.Tab.0.right" timestamp="1631427595966">
+    <state width="1669" height="277" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1632364127976" />
+    <state width="1669" height="277" key="GridCell.Tab.0.right" timestamp="1632364127976">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state width="1296" height="278" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1631427595966" />
+    <state width="1669" height="277" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1632364127976" />
     <state x="1435" y="263" key="IDE.errors.dialog" timestamp="1626595576897">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1435" y="263" key="IDE.errors.dialog/0.0.2560.1040@0.0.2560.1040" timestamp="1626595576897" />
-    <state x="873" y="144" key="SettingsEditor" timestamp="1629340716472">
+    <state x="873" y="144" key="SettingsEditor" timestamp="1632363466103">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="873" y="144" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1629340716472" />
+    <state x="873" y="144" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1632363466103" />
     <state x="1184" y="253" key="Vcs.Push.Dialog.v2" timestamp="1629340234365">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -270,9 +282,13 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="847" y="104" width="992" height="784" key="dock-window-1/0.0.2560.1040@0.0.2560.1040" timestamp="1626600974271" />
-    <state x="419" y="130" width="672" height="678" key="search.everywhere.popup" timestamp="1629340022035">
+    <state x="1526" y="244" key="run.anything.popup" timestamp="1631686156458">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
-    <state x="419" y="130" width="672" height="678" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1629340022035" />
+    <state x="1526" y="244" key="run.anything.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1631686156458" />
+    <state x="1695" y="104" width="672" height="678" key="search.everywhere.popup" timestamp="1632368776598">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="1695" y="104" width="672" height="678" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1632368776598" />
   </component>
 </project>
