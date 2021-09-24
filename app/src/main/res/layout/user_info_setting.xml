@@ -210,6 +210,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="right|center_horizontal"
         android:layout_weight="0"
+        android:onClick="onClick"
         android:text="저장하기" />
 
 </LinearLayout>

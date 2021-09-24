@@ -1,19 +1,17 @@
 package com.example.allergy;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.snackbar.Snackbar;
 
@@ -162,7 +160,7 @@ public class MenuListActivity extends AppCompatActivity {
     }
 
     public void SeparateAllergyMenu(ArrayList<AllergyMenuItem> item) {
-        ArrayList<String> allergies = UserInfoSetting.allergyList;  // 사용자의 알러지정보를 저장한 문자열 ArrayList
+        ArrayList<String> allergies = UserInfoSetting.allergyList; // 사용자의 알러지정보를 저장한 문자열 ArrayList
         int isAllergy = 0;
         for(AllergyMenuItem i : item) {
             for(String j : allergies) {

@@ -2,9 +2,8 @@ package com.example.allergy;
 
 import android.app.Activity;
 import android.content.SharedPreferences;
-import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -20,7 +19,9 @@ import com.google.gson.reflect.TypeToken;
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class UserInfoSetting extends AppCompatActivity implements View.OnClickListener {
+import static android.content.ContentValues.TAG;
+
+public class UserInfoSetting extends AppCompatActivity {
     Button button;
     public static ArrayList<String> allergyList;
     SharedPreferences.Editor prefEditor;
@@ -30,11 +31,17 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_info_setting);
         prefs = getSharedPreferences("pref", Activity.MODE_PRIVATE);
-        prefEditor = prefs.edit();
+        prefEditor = prefs.edit();;
         button = (Button) findViewById(R.id.button3);
-        button.setOnClickListener(this);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(), "저장되었습니다.", Toast.LENGTH_LONG).show();
+                SaveAllergyData(allergyList);
+            }
+        });
         allergyList = new ArrayList<>();
-        
+        allergyList = ReadAllergyData();
         Switch Egg = findViewById(R.id.switchEgg);
         Egg.setChecked(prefs.getBoolean("Egg",false));
         Switch Milk = findViewById(R.id.switchMilk);
@@ -73,7 +80,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
         Peach.setChecked(prefs.getBoolean("Peach",false));
         Switch Lobster = (Switch) findViewById(R.id.switchLobster);
         Lobster.setChecked(prefs.getBoolean("바닷가재",false));
-        
+
         Egg.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
@@ -87,6 +94,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     allergyList.remove("계란");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Milk.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -101,6 +109,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     allergyList.remove("우유");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Buckwheat.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -115,6 +124,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     allergyList.remove("메밀");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Peanut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -129,6 +139,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     allergyList.remove("땅콩");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Soybean.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -143,6 +154,7 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
                     allergyList.remove("대두");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Wheat.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -345,34 +357,35 @@ public class UserInfoSetting extends AppCompatActivity implements View.OnClickLi
 
         });
     }
-
-    @Override
-    public void onClick(View v) {
-        Toast.makeText(UserInfoSetting.this, "저장되었습니다.", Toast.LENGTH_LONG).show();
-        SaveAllergyData(allergyList);
-    }
-    private void SaveAllergyData(ArrayList<String> allergyList){
-        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
-        Editor editor = preferences.edit();
+    private void SaveAllergyData(ArrayList<String> friends) {
+        SharedPreferences preferences = getSharedPreferences("AllergyList",MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
         Gson gson = new Gson();
-        String json = gson.toJson(allergyList);
+        String json = gson.toJson(friends);
         editor.putString("MyAllergies", json);
-        editor.apply();
-
+        editor.commit();
     }
-    private ArrayList<String> ReadAllergyData(){
-        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(getApplicationContext());
+
+    protected  ArrayList<String> ReadAllergyData() {
+        SharedPreferences sharedPrefs = getSharedPreferences("AllergyList",MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = sharedPrefs.getString("MyAllergies","EMPTY");
-        Type type = new TypeToken<ArrayList<String>>(){}.getType();
+        String json = sharedPrefs.getString("MyAllergies", "EMPTY");
+        Type type = new TypeToken<ArrayList<String>>() {
+        }.getType();
         ArrayList<String> arrayList = gson.fromJson(json, type);
         return arrayList;
     }
+
     @Override
     protected void onStop(){
         SharedPreferences sharedPreferences = getSharedPreferences("sFile", MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         super.onStop();
         editor.commit();
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
+        Log.d(TAG, "Put json");
     }
 }
