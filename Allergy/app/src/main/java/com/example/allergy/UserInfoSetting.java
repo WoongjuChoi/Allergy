@@ -169,6 +169,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("밀");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Crab.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -183,6 +184,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("게");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Shrimp.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -197,6 +199,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("새우");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Pork.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -211,6 +214,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("돼지고기");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Tomato.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -225,6 +229,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("토마토");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         SulfuricAcid.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -239,6 +244,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("아황산");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Walnut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -253,6 +259,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("호두");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Chicken.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -267,6 +274,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("닭고기");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Beef.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -281,6 +289,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("쇠고기");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Squid.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -295,6 +304,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("오징어");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Shellfish.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -311,6 +321,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("굴");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Pinenut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -325,6 +336,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("잣");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Peach.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -339,6 +351,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("복숭아");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
         });
         Lobster.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -353,6 +366,7 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("바닷가재");
                 }
                 prefEditor.apply();
+                SaveAllergyData(allergyList);
             }
 
         });
