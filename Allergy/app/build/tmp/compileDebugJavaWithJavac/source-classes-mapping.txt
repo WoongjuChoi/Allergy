@@ -1,0 +1,62 @@
+com/example/allergy/ResisterActivity.java
+ com.example.allergy.ResisterActivity
+ com.example.allergy.ResisterActivity$1
+ com.example.allergy.ResisterActivity$2
+com/example/allergy/MenuItemView.java
+ com.example.allergy.MenuItemView
+com/example/allergy/UserInfoManager.java
+ com.example.allergy.UserInfoManager
+com/example/allergy/AllergyMenuItem.java
+ com.example.allergy.AllergyMenuItem
+com/example/allergy/MainMenuView.java
+ com.example.allergy.MainMenuView
+com/example/allergy/LoginActivity.java
+ com.example.allergy.LoginActivity
+ com.example.allergy.LoginActivity$1
+com/example/allergy/Register.java
+ com.example.allergy.Register
+com/example/allergy/MainMenuItem.java
+ com.example.allergy.MainMenuItem
+com/example/allergy/BuildConfig.java
+ com.example.allergy.BuildConfig
+com/example/allergy/StoreListActivity.java
+ com.example.allergy.StoreListActivity
+ com.example.allergy.StoreListActivity$1
+ com.example.allergy.StoreListActivity$Adapter
+ com.example.allergy.StoreListActivity$Adapter$OnItemClickListener
+ com.example.allergy.StoreListActivity$Adapter$ViewHolder
+ com.example.allergy.StoreListActivity$Adapter$ViewHolder$1
+com/example/allergy/MainActivity.java
+ com.example.allergy.MainActivity
+ com.example.allergy.MainActivity$1
+ com.example.allergy.MainActivity$MainAdapter
+com/example/allergy/MenuListActivity.java
+ com.example.allergy.MenuListActivity
+ com.example.allergy.MenuListActivity$1
+ com.example.allergy.MenuListActivity$AllergyAdapter
+ com.example.allergy.MenuListActivity$AllergyAdapter$OnItemClickListener
+ com.example.allergy.MenuListActivity$AllergyAdapter$ViewHolder
+ com.example.allergy.MenuListActivity$AllergyAdapter$ViewHolder$1
+com/example/allergy/UserInfoSetting.java
+ com.example.allergy.UserInfoSetting
+ com.example.allergy.UserInfoSetting$1
+ com.example.allergy.UserInfoSetting$10
+ com.example.allergy.UserInfoSetting$11
+ com.example.allergy.UserInfoSetting$12
+ com.example.allergy.UserInfoSetting$13
+ com.example.allergy.UserInfoSetting$14
+ com.example.allergy.UserInfoSetting$15
+ com.example.allergy.UserInfoSetting$16
+ com.example.allergy.UserInfoSetting$17
+ com.example.allergy.UserInfoSetting$18
+ com.example.allergy.UserInfoSetting$19
+ com.example.allergy.UserInfoSetting$2
+ com.example.allergy.UserInfoSetting$20
+ com.example.allergy.UserInfoSetting$21
+ com.example.allergy.UserInfoSetting$3
+ com.example.allergy.UserInfoSetting$4
+ com.example.allergy.UserInfoSetting$5
+ com.example.allergy.UserInfoSetting$6
+ com.example.allergy.UserInfoSetting$7
+ com.example.allergy.UserInfoSetting$8
+ com.example.allergy.UserInfoSetting$9
