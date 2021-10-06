@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +22,7 @@ public class MenuListActivity extends AppCompatActivity {
     ArrayList<AllergyMenuItem> items = new ArrayList<AllergyMenuItem>();    // 받아온 메뉴 전체를 저장
     public static ArrayList<AllergyMenuItem> allergyItems = new ArrayList<AllergyMenuItem>(); // 알러지에 해당하는 메뉴들
     public static ArrayList<AllergyMenuItem> nonAllergyItems = new ArrayList<AllergyMenuItem>();  // 알러지에 해당하지 않는 메뉴들
+    public static ArrayList<AllergyMenuItem> allItems;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,9 @@ public class MenuListActivity extends AppCompatActivity {
 
         TextView storeName = (TextView) findViewById(R.id.StoreName); //가게 이름
         ImageView storeLogo = (ImageView)findViewById(R.id.StoreLogo); //가게 로고
+
+        Button allergyMenuButton = (Button) findViewById(R.id.allergyMenuButton); // 알러지 유발메뉴 버튼
+        Button EntireMenuButton = (Button) findViewById(R.id.entireMenuButton); // 전체 메뉴 버튼
 
         Intent intent = getIntent(); //인텐트 가져온다
         storeName.setText(intent.getStringExtra("StoreName")); //인텐트로 받은 가게이름 세팅
@@ -76,9 +81,34 @@ public class MenuListActivity extends AppCompatActivity {
 
         SeparateAllergyMenu(items); // 알러지 여부에 따라 분리
 
+        allItems = items; // 다른 클래스에 넘겨주기 위한 전체 메뉴 리스트
 
 
         //클릭이벤트처리
+        allergyMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1 = new Intent(getApplicationContext(), AllergyMenuActivity.class);
+
+                intent1.putExtra("StoreName1",intent.getStringExtra("StoreName")); /*송신*/
+                intent1.putExtra("StoreImage1",intent.getIntExtra("StoreImage", 0));
+
+                startActivity(intent1);
+            }
+        });
+
+        EntireMenuButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(getApplicationContext(), EntireMenuActivity.class);
+
+                intent2.putExtra("StoreName2",intent.getStringExtra("StoreName")); /*송신*/
+                intent2.putExtra("StoreImage2",intent.getIntExtra("StoreImage", 0));
+
+                startActivity(intent2);
+            }
+        });
+
         adapter.setOnItemClickListener(new AllergyAdapter.OnItemClickListener() {
             @Override
             public void onItemClick(View v, int pos) {
