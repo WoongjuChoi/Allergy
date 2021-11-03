@@ -12,16 +12,27 @@ import android.widget.TextView;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
+
 public class EntireMenuActivity extends AppCompatActivity {
+    TextView allergyInfo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_entire_menu);
+        allergyInfo = findViewById(R.id.allergyInformation);
 
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView2);
 
         MenuListActivity.AllergyAdapter adapter = new MenuListActivity.AllergyAdapter(MenuListActivity.allItems);
+        for(AllergyMenuItem i : MenuListActivity.allergyItems){
+            for(String j : UserInfoSetting.allergyList) {
+                if(i.allergy.contains(j)){
+
+                }
+            }
+        }
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); //리사이클러뷰에 리니어레이아웃매니저 지정
 

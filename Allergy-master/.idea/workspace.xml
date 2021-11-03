@@ -6,7 +6,6 @@
     </shared>
   </component>
   <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_LOG_LEVEL" value="verbose" />
     <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
   </component>
   <component name="AutoImportSettings">
@@ -46,7 +45,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\User\.android\avd\Pixel_3a_API_30_x86.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\dndwn\.android\avd\Pixel_2_API_30.avd]" />
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Allergy\exportToHTML" />
   </component>
@@ -104,8 +103,6 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="android-custom-viewC:/Users/User/AndroidStudioProjects/git/Allergy/app/src/main/java/com/example/allergy/MainMenuView.java_SELECTED" value="MainMenuView" />
-    <property name="android-custom-viewC:/Users/User/AndroidStudioProjects/git/Allergy/app/src/main/java/com/example/allergy/MenuItemView.java_SELECTED" value="MenuItemView" />
     <property name="android-custom-viewC:/Users/dndwn/AndroidStudioProjects/Allergy/app/src/main/java/com/example/allergy/MainMenuView.java_SELECTED" value="MainMenuView" />
     <property name="android-custom-viewC:/Users/dndwn/AndroidStudioProjects/Allergy/app/src/main/java/com/example/allergy/McMenuItemView.java_SELECTED" value="McMenuItemView" />
     <property name="android-custom-viewC:/Users/dndwn/AndroidStudioProjects/Allergy/app/src/main/java/com/example/allergy/MenuItemView.java_SELECTED" value="MenuItemView" />
@@ -115,20 +112,13 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
     <property name="multi-representation-previewC:/Users/dndwn/AndroidStudioProjects/Allergy/app/src/main/java/com/example/allergy/MainMenuView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/dndwn/AndroidStudioProjects/Allergy/app/src/main/java/com/example/allergy/McMenuItemView.java_selected" value="Custom views" />
-    <property name="settings.editor.selected.configurable" value="gradle.compiler" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
     <key name="android.template.-825805833">
       <recent name="com.example.allergy" />
     </key>
-    <key name="android.template.-860972367">
-      <recent name="com.example.allergy" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\dndwn\AndroidStudioProjects\Allergy\app\src\main\res\drawable-v24" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dndwn\AndroidStudioProjects\Allergy\app\src\main\res\layout" />
       <recent name="C:\Users\dndwn\AndroidStudioProjects\Allergy\app\src\main\res\drawable-v24" />
     </key>
     <key name="android.template.2086465057">
@@ -136,6 +126,10 @@
     </key>
     <key name="android.template.1004157773">
       <recent name="com.example.allergy" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dndwn\AndroidStudioProjects\Allergy\app\src\main\res\layout" />
+      <recent name="C:\Users\dndwn\AndroidStudioProjects\Allergy\app\src\main\res\drawable-v24" />
     </key>
   </component>
   <component name="RunManager">
@@ -232,67 +226,50 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="1519" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog" timestamp="1635904460969">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1519" y="275" key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1635904460969" />
     <state x="850" y="262" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1631544697653">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="850" y="262" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1631544697653" />
-    <state x="1561" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1635265596733">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="1171" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1633481957391">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1171" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1633481957391" />
-    <state x="1561" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1635265596733" />
-    <state x="1635" y="309" key="AndroidCreateXmlResourceDialog" timestamp="1635233740207">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="162" y="272" key="AndroidCreateResourceFileDialog" timestamp="1625113306908">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1635" y="309" key="AndroidCreateXmlResourceDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1635233740207" />
+    <state x="162" y="272" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625113306908" />
     <state x="1628" y="275" key="FileChooserDialogImpl" timestamp="1631544714066">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
+    <state x="1221" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1625716005863" />
     <state x="1628" y="275" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1631544714066" />
-    <state x="1610" y="421" key="Github.CreateGistDialog" timestamp="1635238512490">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1610" y="421" key="Github.CreateGistDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1635238512490" />
-    <state width="1427" height="276" key="GridCell.Tab.0.bottom" timestamp="1635296934284">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1878" height="136" key="GridCell.Tab.0.bottom" timestamp="1633481314477">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="136" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1633481314477" />
-    <state width="1427" height="276" key="GridCell.Tab.0.bottom/0.0.2560.1040@0.0.2560.1040" timestamp="1635296934284" />
-    <state width="1427" height="276" key="GridCell.Tab.0.center" timestamp="1635296934284">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1878" height="136" key="GridCell.Tab.0.center" timestamp="1633481314477">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="136" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1633481314477" />
-    <state width="1427" height="276" key="GridCell.Tab.0.center/0.0.2560.1040@0.0.2560.1040" timestamp="1635296934284" />
-    <state width="1427" height="276" key="GridCell.Tab.0.left" timestamp="1635296934284">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1878" height="136" key="GridCell.Tab.0.left" timestamp="1633481314477">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="136" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1633481314477" />
-    <state width="1427" height="276" key="GridCell.Tab.0.left/0.0.2560.1040@0.0.2560.1040" timestamp="1635296934284" />
-    <state width="1427" height="276" key="GridCell.Tab.0.right" timestamp="1635296934284">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state width="1878" height="136" key="GridCell.Tab.0.right" timestamp="1633481314477">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="136" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1633481314477" />
-    <state width="1427" height="276" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1635296934284" />
-    <state x="1369" y="263" key="IDE.errors.dialog" timestamp="1635236164789">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="208" y="190" key="SettingsEditor" timestamp="1625659017062">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1369" y="263" key="IDE.errors.dialog/0.0.2560.1040@0.0.2560.1040" timestamp="1635236164789" />
-    <state x="1293" y="164" key="SettingsEditor" timestamp="1635233970741">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="208" y="190" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1625659017062" />
+    <state x="1144" y="362" key="edit.logcat.filter.dialog.dimensions" timestamp="1625120230853">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1293" y="164" key="SettingsEditor/0.0.2560.1040@0.0.2560.1040" timestamp="1635233970741" />
-    <state x="1763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1634040238343">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1763" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1634040238343" />
-    <state x="1200" y="250" width="896" height="678" key="search.everywhere.popup" timestamp="1635904848682">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="1144" y="362" key="edit.logcat.filter.dialog.dimensions/0.0.1920.1040@0.0.1920.1040" timestamp="1625120230853" />
+    <state x="900" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1632575749390">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="900" y="250" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1632575749390" />
-    <state x="1200" y="250" width="896" height="678" key="search.everywhere.popup/0.0.2560.1040@0.0.2560.1040" timestamp="1635904848682" />
   </component>
 </project>

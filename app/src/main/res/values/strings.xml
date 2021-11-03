@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">Allergy</string>
+    <string name="title_activity_menu_resister_view">menu_resister_view</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <!-- Ted Permission -->
+    <string name="permission_1">[설정] > [권한] 에서 권한을 허용할 수 있습니다.</string>
+    <string name="permission_2">사진 및 파일을 저장하기 위하여 접근 권한이 필요합니다.</string>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
 </resources>

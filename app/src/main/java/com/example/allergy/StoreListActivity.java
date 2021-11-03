@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
@@ -20,11 +23,15 @@ import java.util.ArrayList;
 
 public class StoreListActivity extends AppCompatActivity {
     ArrayList<MainMenuItem> items = new ArrayList<MainMenuItem>();
+    SharedPreferences.Editor prefEditor;
+    SharedPreferences prefs;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.store_list_view);
+        prefs = getSharedPreferences("pref", Activity.MODE_PRIVATE);
+        prefEditor = prefs.edit();
 
         TextView title = (TextView) findViewById(R.id.titleText); //타이틀 이름
         ImageView titleImage = (ImageView) findViewById(R.id.titleImage); //타이틀 이미지
@@ -38,6 +45,8 @@ public class StoreListActivity extends AppCompatActivity {
         Adapter adapter = new StoreListActivity.Adapter(items);
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(this)); //리사이클러뷰에 리니어레이아웃매니저 지정
+
+        String category= prefs.getString("category","");
 
         if (intent.getStringExtra("name").equals("패스트푸드")) { // 패스트푸드 화면인 경우
             items.add(new MainMenuItem("맥도날드", R.drawable.logo));
@@ -55,6 +64,25 @@ public class StoreListActivity extends AppCompatActivity {
         } else if (intent.getStringExtra("name").equals("중국집")) {
             items.add(new MainMenuItem("홍콩반점",R.drawable.jajangmyeon_hongkong_logo));
         }
+        if(category!=""){
+            if (category.equals("패스트푸드")) { // 패스트푸드 화면인 경우
+                items.add(new MainMenuItem(prefs.getString("storeName",""),R.drawable.ic_launcher_foreground));
+            } else if (category.equals("피자")) {
+                items.add(new MainMenuItem(prefs.getString("storeName",""),R.drawable.ic_launcher_foreground));
+            } else if (category.equals("치킨")) {
+                items.add(new MainMenuItem(prefs.getString("storeName",""),R.drawable.ic_launcher_foreground));
+            } else if (category.equals("디저트")) {
+                items.add(new MainMenuItem(prefs.getString("storeName",""),R.drawable.ic_launcher_foreground));
+            } else if (category.equals("분식")) {
+                items.add(new MainMenuItem(prefs.getString("storeName",""),R.drawable.ic_launcher_foreground));
+            } else if (category.equals("도시락")) {
+                items.add(new MainMenuItem(prefs.getString("storeName",""),R.drawable.ic_launcher_foreground));
+            } else if (category.equals("중국집")) {
+                items.add(new MainMenuItem(prefs.getString("storeName",""),R.drawable.ic_launcher_foreground));
+            }
+        }
+
+
 
 
         //클릭이벤트처리
@@ -74,6 +102,23 @@ public class StoreListActivity extends AppCompatActivity {
 
         adapter.notifyDataSetChanged();
     }
+    public void storeAdder(String category, String storeName){
+        if (category.equals("패스트푸드")) { // 패스트푸드 화면인 경우
+            items.add(new MainMenuItem(storeName, R.drawable.ic_launcher_foreground));
+        } else if (category.equals("피자")) {
+            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
+        } else if (category.equals("치킨")) {
+            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
+        } else if (category.equals("디저트")) {
+            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
+        } else if (category.equals("분식")) {
+            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
+        } else if (category.equals("도시락")) {
+            items.add(new MainMenuItem(storeName, R.drawable.ic_launcher_foreground));
+        } else if (category.equals("중국집")) {
+            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
+        }
+    }
 
     public static class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder>{
         ArrayList<MainMenuItem> items = new ArrayList<MainMenuItem>();
@@ -90,6 +135,10 @@ public class StoreListActivity extends AppCompatActivity {
             Adapter.ViewHolder vh = new Adapter.ViewHolder(view);
 
             return vh;
+        }
+        public void  filterList(ArrayList<MainMenuItem> list) {
+            items = list;
+            notifyDataSetChanged();
         }
 
         //커스텀 리스너 인터페이스

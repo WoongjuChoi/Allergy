@@ -41,7 +41,8 @@ public class UserInfoSetting extends AppCompatActivity {
             }
         });
         allergyList = new ArrayList<>();
-        allergyList = ReadAllergyData();
+
+
         Switch Egg = findViewById(R.id.switchEgg);
         Egg.setChecked(prefs.getBoolean("Egg",false));
         Switch Milk = findViewById(R.id.switchMilk);
@@ -80,6 +81,13 @@ public class UserInfoSetting extends AppCompatActivity {
         Peach.setChecked(prefs.getBoolean("Peach",false));
         Switch Lobster = (Switch) findViewById(R.id.switchLobster);
         Lobster.setChecked(prefs.getBoolean("바닷가재",false));
+        try {
+            allergyList = ReadAllergyData();
+        } catch (Exception e){
+            SaveAllergyData(allergyList);
+            e.getStackTrace();
+            throw e;
+        }
 
         Egg.setOnCheckedChangeListener(new OnCheckedChangeListener() {
             @Override
@@ -94,7 +102,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("계란");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Milk.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -109,7 +116,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("우유");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Buckwheat.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -124,7 +130,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("메밀");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Peanut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -139,7 +144,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("땅콩");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Soybean.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -154,7 +158,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("대두");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Wheat.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -169,7 +172,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("밀");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Crab.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -184,7 +186,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("게");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Shrimp.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -199,7 +200,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("새우");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Pork.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -214,7 +214,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("돼지고기");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Tomato.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -229,7 +228,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("토마토");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         SulfuricAcid.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -244,7 +242,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("아황산");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Walnut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -259,7 +256,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("호두");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Chicken.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -274,7 +270,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("닭고기");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Beef.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -289,7 +284,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("쇠고기");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Squid.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -304,7 +298,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("오징어");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Shellfish.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -321,7 +314,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("굴");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Pinenut.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -336,7 +328,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("잣");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Peach.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -351,7 +342,6 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("복숭아");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
         });
         Lobster.setOnCheckedChangeListener(new OnCheckedChangeListener() {
@@ -366,21 +356,20 @@ public class UserInfoSetting extends AppCompatActivity {
                     allergyList.remove("바닷가재");
                 }
                 prefEditor.apply();
-                SaveAllergyData(allergyList);
             }
 
         });
     }
-    private void SaveAllergyData(ArrayList<String> friends) {
+    public void SaveAllergyData(ArrayList<String> allergies) {
         SharedPreferences preferences = getSharedPreferences("AllergyList",MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         Gson gson = new Gson();
-        String json = gson.toJson(friends);
+        String json = gson.toJson(allergies);
         editor.putString("MyAllergies", json);
         editor.commit();
     }
 
-    protected  ArrayList<String> ReadAllergyData() {
+    public  ArrayList<String> ReadAllergyData() {
         SharedPreferences sharedPrefs = getSharedPreferences("AllergyList",MODE_PRIVATE);
         Gson gson = new Gson();
         String json = sharedPrefs.getString("MyAllergies", "EMPTY");
@@ -401,5 +390,9 @@ public class UserInfoSetting extends AppCompatActivity {
     protected void onPause(){
         super.onPause();
         Log.d(TAG, "Put json");
+    }
+    public void onBackPressed(){
+        SaveAllergyData(allergyList);
+        super.onBackPressed();
     }
 }

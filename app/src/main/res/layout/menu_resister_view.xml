@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="대분류"
+        android:textSize="24sp" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:clipToPadding="false"
+        android:paddingLeft="50dp"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/storenameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:ems="10"
+        android:hint="상호명"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/menunameET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginRight="50dp"
+        android:ems="10"
+        android:hint="메뉴명"
+        android:inputType="textPersonName" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/Egg"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="난류(계란포함)" />
+
+            <CheckBox
+                android:id="@+id/Milk"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="우유" />
+
+            <CheckBox
+                android:id="@+id/Buckwheat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="메밀" />
+
+            <CheckBox
+                android:id="@+id/Peanut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="땅콩" />
+
+            <CheckBox
+                android:id="@+id/Soybean"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="대두" />
+
+            <CheckBox
+                android:id="@+id/Wheat"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="밀" />
+
+            <CheckBox
+                android:id="@+id/Crab"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="게" />
+
+            <CheckBox
+                android:id="@+id/Shrimp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="새우" />
+
+            <CheckBox
+                android:id="@+id/Pork"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="돼지고기" />
+
+            <CheckBox
+                android:id="@+id/Lobster"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="바닷가재" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <CheckBox
+                android:id="@+id/Tomato"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="토마토" />
+
+            <CheckBox
+                android:id="@+id/SulfuricAcid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="아황산" />
+
+            <CheckBox
+                android:id="@+id/Walnut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="호두" />
+
+            <CheckBox
+                android:id="@+id/Chicken"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="닭고기" />
+
+            <CheckBox
+                android:id="@+id/Beef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="쇠고기" />
+
+            <CheckBox
+                android:id="@+id/Squid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="오징어" />
+
+            <CheckBox
+                android:id="@+id/Shellfish"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="조개류(굴포함)" />
+
+            <CheckBox
+                android:id="@+id/Pinenut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="잣" />
+
+            <CheckBox
+                android:id="@+id/Peach"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="복숭아" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/menu_resister_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="추가하기" />
+
+</LinearLayout>

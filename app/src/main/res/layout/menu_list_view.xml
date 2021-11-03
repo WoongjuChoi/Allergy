@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<LinearLayout android:layout_width="match_parent"
+<LinearLayout xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android">
@@ -31,12 +32,24 @@
 
     </LinearLayout>
 
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        android:text="알러지 비유발 메뉴"
+        android:textAlignment="center"
+        android:gravity="center_horizontal" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <Button
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
             android:id="@+id/allergyMenuButton"
             android:layout_width="0dp"
             android:layout_weight="1"
@@ -44,6 +57,8 @@
             android:text="알러지 유발 메뉴" />
 
         <Button
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="5dp"
             android:id="@+id/entireMenuButton"
             android:layout_width="0dp"
             android:layout_weight="1"
