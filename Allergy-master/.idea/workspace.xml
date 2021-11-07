@@ -31,21 +31,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2055659b-ffa3-43f4-94ef-f2845aa7c65d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/AllergyMenuActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/EntireMenuActivity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_allergy_menu2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_entire_menu.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/MenuListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/MenuListActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/menu_list_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/menu_list_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Allergy/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Allergy/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\dndwn\.android\avd\Pixel_2_API_30.avd]" />
   <component name="ExportToHTMLSettings">
     <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/../Allergy\exportToHTML" />
   </component>
@@ -91,7 +87,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1siZGtAd17F5BgTYRabG6D8iawo" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -109,7 +105,7 @@
     <property name="android-custom-viewD:/capstone/Allergy/Allergy/app/src/main/java/com/example/allergy/McMenuItemView.java_SELECTED" value="McMenuItemView" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable-v24" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/layout" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="multi-representation-previewC:/Users/dndwn/AndroidStudioProjects/Allergy/app/src/main/java/com/example/allergy/MainMenuView.java_selected" value="Custom views" />
     <property name="multi-representation-previewC:/Users/dndwn/AndroidStudioProjects/Allergy/app/src/main/java/com/example/allergy/McMenuItemView.java_selected" value="Custom views" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
@@ -136,9 +132,7 @@
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Allergy.app" />
@@ -194,9 +188,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -234,14 +226,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="1171" y="266" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1633481957391" />
-    <state x="162" y="272" key="AndroidCreateResourceFileDialog" timestamp="1625113306908">
+    <state x="1221" y="275" key="FileChooserDialogImpl" timestamp="1635906298781">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="162" y="272" key="AndroidCreateResourceFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1625113306908" />
-    <state x="1628" y="275" key="FileChooserDialogImpl" timestamp="1631544714066">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1221" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1625716005863" />
+    <state x="1221" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1635906298781" />
     <state x="1628" y="275" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1631544714066" />
     <state width="1878" height="136" key="GridCell.Tab.0.bottom" timestamp="1633481314477">
       <screen x="0" y="0" width="1920" height="1040" />
@@ -259,14 +247,6 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1878" height="136" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1633481314477" />
-    <state x="208" y="190" key="SettingsEditor" timestamp="1625659017062">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="208" y="190" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1625659017062" />
-    <state x="1144" y="362" key="edit.logcat.filter.dialog.dimensions" timestamp="1625120230853">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="1144" y="362" key="edit.logcat.filter.dialog.dimensions/0.0.1920.1040@0.0.1920.1040" timestamp="1625120230853" />
     <state x="900" y="250" width="672" height="678" key="search.everywhere.popup" timestamp="1632575749390">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

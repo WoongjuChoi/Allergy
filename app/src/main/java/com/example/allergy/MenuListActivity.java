@@ -29,6 +29,10 @@ public class MenuListActivity extends AppCompatActivity {
     public static ArrayList<AllergyMenuItem> allergyItems = new ArrayList<AllergyMenuItem>(); // 알러지에 해당하는 메뉴들
     public static ArrayList<AllergyMenuItem> nonAllergyItems = new ArrayList<AllergyMenuItem>();  // 알러지에 해당하지 않는 메뉴들
     public static ArrayList<AllergyMenuItem> allItems;
+
+    public static ArrayList<String> head = new ArrayList<String>(); // 서버에서 받은 메뉴 이름들
+    public static ArrayList<String> body = new ArrayList<String>(); // 서버에서 받은 알러지유발성분 정보들
+
     SharedPreferences.Editor prefEditor;
     SharedPreferences prefs;
     @Override
@@ -77,7 +81,10 @@ public class MenuListActivity extends AppCompatActivity {
             items.add(new AllergyMenuItem("햄버거", "대두, 밀, 토마토, 쇠고기"));
         } else if ( intent.getStringExtra("StoreName").equals("버거킹")){
             items.clear();
-            items.add(new AllergyMenuItem("와퍼", "밀, 대두, 토마토, 쇠고기, 난류"));
+            for (int i = 0; i < head.size(); ++i)
+            {
+                items.add(new AllergyMenuItem(head.get(i), body.get(i)));
+            }
             SeparateAllergyMenu(items);
         } else if ( intent.getStringExtra("StoreName").equals("도미노")){
             items.clear();

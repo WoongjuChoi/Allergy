@@ -31,13 +31,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0ea46e38-48c4-4e2e-83a9-3a7cfe3a561c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/MenuListActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/MenuListActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/UserInfoSetting.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/allergy/UserInfoSetting.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/user_info_setting.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/user_info_setting.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,7 +43,6 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\User\.android\avd\Pixel_3a_API_30_x86.avd]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -91,7 +86,7 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectId" id="1vTbT73WVvH2x6Fh7a3iFOafvTW" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -106,7 +101,7 @@
     <property name="android-custom-viewC:/Users/User/AndroidStudioProjects/git/Allergy/Allergy/app/src/main/java/com/example/allergy/MainMenuView.java_SELECTED" value="MainMenuView" />
     <property name="android-custom-viewC:/Users/User/AndroidStudioProjects/git/Allergy/Allergy/app/src/main/java/com/example/allergy/MenuItemView.java_SELECTED" value="MenuItemView" />
     <property name="ignore.virus.scanning.warn.message" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Allergy-master" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -127,9 +122,7 @@
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
     <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="Allergy.app" />
@@ -185,9 +178,7 @@
       <option name="ACTIVITY_CLASS" value="" />
       <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
       <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
-      <method v="2">
-        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
-      </method>
+      <method v="2" />
     </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -238,13 +229,10 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1285" y="100" width="1185" height="832" key="AVDManager/0.0.2560.1040@0.0.2560.1040" timestamp="1632364389579" />
-    <state x="1458" y="275" key="AndroidCreateResourceFileDialog" timestamp="1626916581802">
-      <screen x="0" y="0" width="2560" height="1040" />
+    <state x="1244" y="275" key="FileChooserDialogImpl" timestamp="1635906274525">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="1458" y="275" key="AndroidCreateResourceFileDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1626916581802" />
-    <state x="1658" y="275" key="FileChooserDialogImpl" timestamp="1631427502290">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
+    <state x="1244" y="275" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1635906274525" />
     <state x="1658" y="275" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1631427502290" />
     <state width="1430" height="238" key="GridCell.Tab.0.bottom" timestamp="1632576368109">
       <screen x="0" y="0" width="2560" height="1040" />
@@ -262,10 +250,6 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state width="1430" height="238" key="GridCell.Tab.0.right/0.0.2560.1040@0.0.2560.1040" timestamp="1632576368109" />
-    <state x="1435" y="263" key="IDE.errors.dialog" timestamp="1626595576897">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="1435" y="263" key="IDE.errors.dialog/0.0.2560.1040@0.0.2560.1040" timestamp="1626595576897" />
     <state x="873" y="144" key="SettingsEditor" timestamp="1632363466103">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
@@ -278,10 +262,6 @@
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
     <state x="1321" y="433" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.2560.1040@0.0.2560.1040" timestamp="1629902101215" />
-    <state x="847" y="104" width="992" height="784" key="dock-window-1" timestamp="1626600974271">
-      <screen x="0" y="0" width="2560" height="1040" />
-    </state>
-    <state x="847" y="104" width="992" height="784" key="dock-window-1/0.0.2560.1040@0.0.2560.1040" timestamp="1626600974271" />
     <state x="1526" y="244" key="run.anything.popup" timestamp="1631686156458">
       <screen x="0" y="0" width="2560" height="1040" />
     </state>
