@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +59,9 @@ public class MenuListActivity extends AppCompatActivity {
         storeName.setText(intent.getStringExtra("StoreName")); //인텐트로 받은 가게이름 세팅
         storeLogo.setImageResource(intent.getIntExtra("StoreImage", 0)); //인텐트로 받은 가게로고 세팅
 
+
+
+
         if (intent.getStringExtra("StoreName").equals("맥도날드")) { //가게 이름이 맥도날드이면
             items.clear();
             items.add(new AllergyMenuItem("창녕 갈릭 버거", "난류, 우유, 대두, 밀, 토마토, 쇠고기, 조개류"));
@@ -81,11 +85,18 @@ public class MenuListActivity extends AppCompatActivity {
             items.add(new AllergyMenuItem("햄버거", "대두, 밀, 토마토, 쇠고기"));
         } else if ( intent.getStringExtra("StoreName").equals("버거킹")){
             items.clear();
-            for (int i = 0; i < head.size(); ++i)
-            {
-                items.add(new AllergyMenuItem(head.get(i), body.get(i)));
+//            for (int i = 0; i < head.size(); ++i)
+//            {
+//                items.add(new AllergyMenuItem(head.get(i), body.get(i)));
+//            }
+//            SeparateAllergyMenu(items);
+            try {
+                Menu task = new Menu();
+                String result = task.execute(intent.getStringExtra("StoreName")).get(); //데이터 전송 후 결과 값 받기
+                Log.d("데이터", result);
+            } catch (Exception e) {
+
             }
-            SeparateAllergyMenu(items);
         } else if ( intent.getStringExtra("StoreName").equals("도미노")){
             items.clear();
             items.add(new AllergyMenuItem("블록버스터", "계란, 대두, 밀, 돼지고기, 닭고기, 토마토, 우유, 새우, 쇠고기, 오징어, 바닷가재, 게, 조개류"));

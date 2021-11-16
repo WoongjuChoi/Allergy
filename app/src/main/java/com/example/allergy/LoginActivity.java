@@ -38,7 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                /* try {
+                 try {
                     String result;
                     String id, pwd;
 
@@ -48,14 +48,14 @@ public class LoginActivity extends AppCompatActivity {
                     Login task = new Login();
                     result = task.execute(id, pwd).get();
 
-                    if(task.receiveMsg.substring(1,3).equals("성공")) { */
+                    if(task.receiveMsg.substring(1,3).equals("성공")) {
                         //여기에 로그인 성공 시 해야할 것 처리
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.putExtra("login",1);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         startActivity(intent);
                         finish();
-                        /* Snackbar.make(view, "로그인 성공", Snackbar.LENGTH_LONG).show();
+                         Snackbar.make(view, "로그인 성공", Snackbar.LENGTH_LONG).show();
                     } else if(task.receiveMsg.substring(1,3).equals("실패")) {
                         Snackbar.make(view, "로그인 실패", Snackbar.LENGTH_LONG).show();
                     } else {
@@ -63,7 +63,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 } catch (Exception e) {
                     Log.i("DBTest", "....ERROR....!");
-                } */
+                }
             }
         });
 
