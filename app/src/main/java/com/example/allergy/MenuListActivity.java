@@ -91,9 +91,11 @@ public class MenuListActivity extends AppCompatActivity {
 //            }
 //            SeparateAllergyMenu(items);
             try {
+                String result;
                 Menu task = new Menu();
-                String result = task.execute(intent.getStringExtra("StoreName")).get(); //데이터 전송 후 결과 값 받기
-                Log.d("데이터", result);
+                result = task.execute(intent.getStringExtra("StoreName")).get(); //데이터 전송 후 결과 값 받기
+//                Log.d("데이터", result);
+                System.out.println(result);
             } catch (Exception e) {
 
             }
