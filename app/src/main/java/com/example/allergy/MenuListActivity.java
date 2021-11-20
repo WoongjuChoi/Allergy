@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -22,20 +24,27 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.lang.reflect.Type;
 import java.util.ArrayList;
+import java.util.List;
 
 public class MenuListActivity extends AppCompatActivity {
     ArrayList<AllergyMenuItem> items = new ArrayList<AllergyMenuItem>();    // 받아온 메뉴 전체를 저장
     public static ArrayList<AllergyMenuItem> allergyItems = new ArrayList<AllergyMenuItem>(); // 알러지에 해당하는 메뉴들
     public static ArrayList<AllergyMenuItem> nonAllergyItems = new ArrayList<AllergyMenuItem>();  // 알러지에 해당하지 않는 메뉴들
     public static ArrayList<AllergyMenuItem> allItems;
+    public static String testString= "[{\"ingredient\":\"밀, 소고기, 닭고기\",\"name\":\"몬스터와퍼\"},{\"ingredient\":\"밀, 소고기\",\"name\":\"스태커와퍼\"},{\"ingredient\":\"밀, 소고기\",\"name\":\"와퍼\"},{\"ingredient\":\"밀, 소고기, 새우\",\"name\":\"통새우 와퍼\"}]";
 
     public static ArrayList<String> head = new ArrayList<String>(); // 서버에서 받은 메뉴 이름들
     public static ArrayList<String> body = new ArrayList<String>(); // 서버에서 받은 알러지유발성분 정보들
 
     SharedPreferences.Editor prefEditor;
     SharedPreferences prefs;
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,9 +67,6 @@ public class MenuListActivity extends AppCompatActivity {
         Intent intent = getIntent(); //인텐트 가져온다
         storeName.setText(intent.getStringExtra("StoreName")); //인텐트로 받은 가게이름 세팅
         storeLogo.setImageResource(intent.getIntExtra("StoreImage", 0)); //인텐트로 받은 가게로고 세팅
-
-
-
 
         if (intent.getStringExtra("StoreName").equals("맥도날드")) { //가게 이름이 맥도날드이면
             items.clear();
@@ -85,20 +91,23 @@ public class MenuListActivity extends AppCompatActivity {
             items.add(new AllergyMenuItem("햄버거", "대두, 밀, 토마토, 쇠고기"));
         } else if ( intent.getStringExtra("StoreName").equals("버거킹")){
             items.clear();
-//            for (int i = 0; i < head.size(); ++i)
-//            {
+//              for (int i = 0; i < head.size(); ++i)
+//              {
 //                items.add(new AllergyMenuItem(head.get(i), body.get(i)));
-//            }
-//            SeparateAllergyMenu(items);
-            try {
-                String result;
-                Menu task = new Menu();
-                result = task.execute(intent.getStringExtra("StoreName")).get(); //데이터 전송 후 결과 값 받기
+//              }
+//
+//            try {
+//                String result;
+//                Menu task = new Menu();
+//                result = task.execute(intent.getStringExtra("StoreName")).get(); //데이터 전송 후 결과 값 받기
 //                Log.d("데이터", result);
-                System.out.println(result);
-            } catch (Exception e) {
-
-            }
+//                System.out.println(result);
+//            } catch (Exception e) {
+//
+//            }
+           JSONParse(testString); // Json to items 함수호출
+           System.out.println("실행성공");
+           SeparateAllergyMenu(items); // 알러지에 따라 메뉴 분리
         } else if ( intent.getStringExtra("StoreName").equals("도미노")){
             items.clear();
             items.add(new AllergyMenuItem("블록버스터", "계란, 대두, 밀, 돼지고기, 닭고기, 토마토, 우유, 새우, 쇠고기, 오징어, 바닷가재, 게, 조개류"));
@@ -117,11 +126,13 @@ public class MenuListActivity extends AppCompatActivity {
             SeparateAllergyMenu(items);
         } else if ( intent.getStringExtra("StoreName").equals("홍콩반점")){
             items.clear();
-            items.add(new AllergyMenuItem("짜장면", " "));
+            items.add(new AllergyMenuItem("짜장면", ""));
             SeparateAllergyMenu(items);
         } else {
             items.clear();
-            items.add(new AllergyMenuItem(prefs.getString("menuName",""), prefs.getString("allergyResister","")));
+            List<String> allergies = ReadAllergyData(); // 로컬에 저장된 유저가 등록하려던 알러지정보
+            String str = String.join(",",allergies); // ArrayList to String
+            items.add(new AllergyMenuItem(prefs.getString("menuName",""), str));
             SeparateAllergyMenu(items);
         }
 
@@ -164,6 +175,23 @@ public class MenuListActivity extends AppCompatActivity {
 
         adapter.notifyDataSetChanged();
     }
+    public void JSONParse(String jsonStr){ //Json to items 함수
+
+        try {
+            JSONArray jsonArray = new JSONArray(jsonStr);
+            for(int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String name = jsonObject.getString("name");
+                String ingredient = jsonObject.getString("ingredient");
+                AllergyMenuItem item = new AllergyMenuItem(name,ingredient);
+                items.add(item);
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     public static class AllergyAdapter extends RecyclerView.Adapter<AllergyAdapter.ViewHolder>{
         ArrayList<AllergyMenuItem> items = new ArrayList<AllergyMenuItem>();
@@ -242,9 +270,9 @@ public class MenuListActivity extends AppCompatActivity {
 
         }
     public  ArrayList<String> ReadAllergyData() {
-        SharedPreferences sharedPrefs = getSharedPreferences("AllergyList",MODE_PRIVATE);
+        SharedPreferences sharedPrefs = getSharedPreferences("pref",MODE_PRIVATE);
         Gson gson = new Gson();
-        String json = sharedPrefs.getString("MyAllergies", "EMPTY");
+        String json = sharedPrefs.getString("allergyResister", "EMPTY");
         Type type = new TypeToken<ArrayList<String>>() {
         }.getType();
         ArrayList<String> arrayList = gson.fromJson(json, type);

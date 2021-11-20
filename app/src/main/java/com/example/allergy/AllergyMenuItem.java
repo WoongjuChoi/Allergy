@@ -16,6 +16,10 @@ public class AllergyMenuItem {
             allergy.add(allergyArray[i]); //반복문을 돌며 배열의 알러지정보를 allergy에 저장
         }
     }
+    AllergyMenuItem(String name, ArrayList<String> allergyList){
+        menuName = name;
+        allergy = allergyList;
+    }
 
     public String getMenuName() {
         return menuName;

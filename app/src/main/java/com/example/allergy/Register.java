@@ -19,7 +19,7 @@ public class Register extends AsyncTask<String, Void, String> {
         try {
             String str;
 
-            URL url = new URL("http://1.238.185.186:8081/AllergyLogin/androidDB.jsp"); //접속할 서버 주소
+            URL url = new URL("http://1.238.185.186:8080/AllergyLogin/androidDB.jsp"); //접속할 서버 주소
 
             HttpURLConnection conn = (HttpURLConnection)url.openConnection();
             conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
