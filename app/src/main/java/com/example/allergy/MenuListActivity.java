@@ -44,6 +44,7 @@ public class MenuListActivity extends AppCompatActivity {
 
     SharedPreferences.Editor prefEditor;
     SharedPreferences prefs;
+    String result; //2021.11.22 장우정 추가
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -96,16 +97,16 @@ public class MenuListActivity extends AppCompatActivity {
 //                items.add(new AllergyMenuItem(head.get(i), body.get(i)));
 //              }
 //
-//            try {
-//                String result;
-//                Menu task = new Menu();
-//                result = task.execute(intent.getStringExtra("StoreName")).get(); //데이터 전송 후 결과 값 받기
-//                Log.d("데이터", result);
-//                System.out.println(result);
-//            } catch (Exception e) {
-//
-//            }
-           JSONParse(testString); // Json to items 함수호출
+            try { //2021.11.22 장우정 통신 부뷴 추가
+                Menu task = new Menu();
+                String name = intent.getStringExtra("StoreName")
+                result = task.execute(name).get(); //데이터 전송 후 결과 값 받기
+                Log.d("데이터", result);
+                System.out.println(result);
+            } catch (Exception e) {
+
+            }
+           JSONParse(result); // Json to items 함수호출
            System.out.println("실행성공");
            SeparateAllergyMenu(items); // 알러지에 따라 메뉴 분리
         } else if ( intent.getStringExtra("StoreName").equals("도미노")){
