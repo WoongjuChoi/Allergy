@@ -9,6 +9,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -19,12 +20,17 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class StoreListActivity extends AppCompatActivity {
     ArrayList<MainMenuItem> items = new ArrayList<MainMenuItem>();
     SharedPreferences.Editor prefEditor;
     SharedPreferences prefs;
+    String result;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,7 +54,19 @@ public class StoreListActivity extends AppCompatActivity {
 
         String category= prefs.getString("category","");
 
-        if (intent.getStringExtra("name").equals("패스트푸드")) { // 패스트푸드 화면인 경우
+        if (intent.getStringExtra("name").equals("패스트푸드")) {
+            // 패스트푸드 화면인 경우
+//            try {
+//                Store task = new Store();
+//                String name = intent.getStringExtra("name");
+//                result = task.execute(name).get(); //데이터 전송 후 결과 값 받기
+//                Log.d("데이터", result);
+//                System.out.println(result);
+//            } catch (Exception e) {
+//
+//            }
+//            JSONParse(result); // Json to items 함수호출
+//            System.out.println("실행성공");
             items.add(new MainMenuItem("맥도날드", R.drawable.logo));
             items.add(new MainMenuItem("버거킹", R.drawable.burger_burgerking_logo));
             items.add(new MainMenuItem("롯데리아", R.drawable.lotteria));
@@ -143,21 +161,37 @@ public class StoreListActivity extends AppCompatActivity {
 
         adapter.notifyDataSetChanged();
     }
-    public void storeAdder(String category, String storeName){
-        if (category.equals("패스트푸드")) { // 패스트푸드 화면인 경우
-            items.add(new MainMenuItem(storeName, R.drawable.ic_launcher_foreground));
-        } else if (category.equals("피자")) {
-            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
-        } else if (category.equals("치킨")) {
-            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
-        } else if (category.equals("디저트")) {
-            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
-        } else if (category.equals("분식")) {
-            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
-        } else if (category.equals("도시락")) {
-            items.add(new MainMenuItem(storeName, R.drawable.ic_launcher_foreground));
-        } else if (category.equals("중국집")) {
-            items.add(new MainMenuItem(storeName,R.drawable.ic_launcher_foreground));
+    public void JSONParse(String jsonStr){
+        try {
+            JSONArray jsonArray = new JSONArray(jsonStr);
+            for(int i = 0; i < jsonArray.length(); i++) {
+                JSONObject jsonObject = jsonArray.getJSONObject(i);
+                String name = jsonObject.getString("name");
+                if(name.equals("맥도날드")){
+                    MainMenuItem item = new MainMenuItem(name,R.drawable.logo);
+                    items.add(item);
+                } else if(name.equals("버거킹")){
+                    MainMenuItem item = new MainMenuItem(name,R.drawable.burger_burgerking_logo);
+                    items.add(item);
+                } else if(name.equals("롯데리아")){
+                    MainMenuItem item = new MainMenuItem(name,R.drawable.lotteria);
+                    items.add(item);
+                } else if(name.equals("KFC")){
+                    MainMenuItem item = new MainMenuItem(name,R.drawable.kfc);
+                    items.add(item);
+                } else if(name.equals("맘스터치")){
+                    MainMenuItem item = new MainMenuItem(name,R.drawable.momstouch);
+                    items.add(item);
+                } else if(name.equals("서브웨이")){
+                    MainMenuItem item = new MainMenuItem(name,R.drawable.subway);
+                    items.add(item);
+                } else if(name.equals("쉐이크쉑")){
+                    MainMenuItem item = new MainMenuItem(name,R.drawable.shakeshack);
+                    items.add(item);
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
         }
     }
 

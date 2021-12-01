@@ -129,7 +129,27 @@ public class MenuListActivity extends AppCompatActivity {
             items.clear();
             items.add(new AllergyMenuItem("짜장면", ""));
             SeparateAllergyMenu(items);
-        } else {
+        } else if (intent.getStringExtra("storeName").equals("파리바게트")) {
+            items.clear();
+//              for (int i = 0; i < head.size(); ++i)
+//              {
+//                items.add(new AllergyMenuItem(head.get(i), body.get(i)));
+//              }
+//
+            try {
+                Menu task = new Menu();
+                String name = intent.getStringExtra("StoreName");
+                result = task.execute(name).get(); //데이터 전송 후 결과 값 받기
+                Log.d("데이터", result);
+                System.out.println(result);
+            } catch (Exception e) {
+
+            }
+            JSONParse(result); // Json to items 함수호출
+            System.out.println("실행성공");
+            SeparateAllergyMenu(items); // 알러지에 따라 메뉴 분리
+        }
+            else{
             items.clear();
             List<String> allergies = ReadAllergyData(); // 로컬에 저장된 유저가 등록하려던 알러지정보
             String str = String.join(",",allergies); // ArrayList to String
