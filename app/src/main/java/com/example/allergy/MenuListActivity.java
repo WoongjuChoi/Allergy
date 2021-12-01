@@ -97,9 +97,9 @@ public class MenuListActivity extends AppCompatActivity {
 //                items.add(new AllergyMenuItem(head.get(i), body.get(i)));
 //              }
 //
-            try { //2021.11.22 장우정 통신 부뷴 추가
+            try {
                 Menu task = new Menu();
-                String name = intent.getStringExtra("StoreName")
+                String name = intent.getStringExtra("StoreName");
                 result = task.execute(name).get(); //데이터 전송 후 결과 값 받기
                 Log.d("데이터", result);
                 System.out.println(result);
@@ -176,7 +176,7 @@ public class MenuListActivity extends AppCompatActivity {
 
         adapter.notifyDataSetChanged();
     }
-    public void JSONParse(String jsonStr){ //Json to items 함수
+    public void JSONParse(String jsonStr){
 
         try {
             JSONArray jsonArray = new JSONArray(jsonStr);

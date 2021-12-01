@@ -47,8 +47,9 @@ public class LoginActivity extends AppCompatActivity {
 
                     Login task = new Login();
                     result = task.execute(id, pwd).get();
+                    System.out.println(task.receiveMsg.substring(2,4));
 
-                    if(task.receiveMsg.substring(1,3).equals("성공")) {
+                     if(task.receiveMsg.substring(2,4).equals("성공")) {
                         //여기에 로그인 성공 시 해야할 것 처리
                         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                         intent.putExtra("login",1);
@@ -56,7 +57,7 @@ public class LoginActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                          Snackbar.make(view, "로그인 성공", Snackbar.LENGTH_LONG).show();
-                    } else if(task.receiveMsg.substring(1,3).equals("실패")) {
+                    } else if(task.receiveMsg.substring(2,4).equals("실패")) {
                         Snackbar.make(view, "로그인 실패", Snackbar.LENGTH_LONG).show();
                     } else {
                         Snackbar.make(view, "없는 아이디", Snackbar.LENGTH_LONG).show();
