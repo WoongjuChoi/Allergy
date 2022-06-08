@@ -130,6 +130,7 @@ public class MenuListActivity extends AppCompatActivity {
             items.add(new AllergyMenuItem("짜장면", ""));
             SeparateAllergyMenu(items);
         } else if (intent.getStringExtra("storeName").equals("파리바게트")) {
+            result = null;
             items.clear();
 //              for (int i = 0; i < head.size(); ++i)
 //              {
@@ -138,7 +139,7 @@ public class MenuListActivity extends AppCompatActivity {
 //
             try {
                 Menu task = new Menu();
-                String name = intent.getStringExtra("StoreName");
+                String name = "파리바게트";
                 result = task.execute(name).get(); //데이터 전송 후 결과 값 받기
                 Log.d("데이터", result);
                 System.out.println(result);
